@@ -1,0 +1,230 @@
+[
+  {
+    "id": "r16",
+    "name": "16avos de Final",
+    "matches": [
+      {
+        "id": "k73", "num": "P73", "date": "2026-06-28", "time": "16:00",
+        "stadium": "SoFi Stadium", "city": "Los Ángeles",
+        "homeSlot": { "type": "group_pos", "group": "A", "pos": 2 },
+        "awaySlot": { "type": "group_pos", "group": "B", "pos": 2 }
+      },
+      {
+        "id": "k74", "num": "P74", "date": "2026-06-29", "time": "17:30",
+        "stadium": "Gillette Stadium", "city": "Boston",
+        "homeSlot": { "type": "group_pos", "group": "E", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_74",  "label": "3º A/B/C/D/F" }
+      },
+      {
+        "id": "k75", "num": "P75", "date": "2026-06-29", "time": "22:00",
+        "stadium": "Estadio BBVA", "city": "Monterrey",
+        "homeSlot": { "type": "group_pos", "group": "F", "pos": 1 },
+        "awaySlot": { "type": "group_pos", "group": "C", "pos": 2 }
+      },
+      {
+        "id": "k76", "num": "P76", "date": "2026-06-29", "time": "14:00",
+        "stadium": "NRG Stadium", "city": "Houston",
+        "homeSlot": { "type": "group_pos", "group": "C", "pos": 1 },
+        "awaySlot": { "type": "group_pos", "group": "F", "pos": 2 }
+      },
+      {
+        "id": "k77", "num": "P77", "date": "2026-06-30", "time": "18:00",
+        "stadium": "MetLife Stadium", "city": "Nueva Jersey",
+        "homeSlot": { "type": "group_pos", "group": "I", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_77",  "label": "3º C/D/F/G/H" }
+      },
+      {
+        "id": "k78", "num": "P78", "date": "2026-06-30", "time": "14:00",
+        "stadium": "AT&T Stadium", "city": "Dallas",
+        "homeSlot": { "type": "group_pos", "group": "E", "pos": 2 },
+        "awaySlot": { "type": "group_pos", "group": "I", "pos": 2 }
+      },
+      {
+        "id": "k79", "num": "P79", "date": "2026-06-30", "time": "22:00",
+        "stadium": "Estadio Azteca", "city": "Ciudad de México",
+        "homeSlot": { "type": "group_pos", "group": "A", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_79",  "label": "3º C/E/F/H/I" }
+      },
+      {
+        "id": "k80", "num": "P80", "date": "2026-07-01", "time": "13:00",
+        "stadium": "Mercedes Benz Stadium", "city": "Atlanta",
+        "homeSlot": { "type": "group_pos", "group": "L", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_80",  "label": "3º E/H/I/J/K" }
+      },
+      {
+        "id": "k81", "num": "P81", "date": "2026-07-01", "time": "21:00",
+        "stadium": "Levi's Stadium", "city": "San Francisco",
+        "homeSlot": { "type": "group_pos", "group": "D", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_81",  "label": "3º B/E/F/I/J" }
+      },
+      {
+        "id": "k82", "num": "P82", "date": "2026-07-01", "time": "17:00",
+        "stadium": "Lumen Field", "city": "Seattle",
+        "homeSlot": { "type": "group_pos", "group": "G", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_82",  "label": "3º A/E/H/I/J" }
+      },
+      {
+        "id": "k83", "num": "P83", "date": "2026-07-02", "time": "20:00",
+        "stadium": "BMO Field", "city": "Toronto",
+        "homeSlot": { "type": "group_pos", "group": "K", "pos": 2 },
+        "awaySlot": { "type": "group_pos", "group": "L", "pos": 2 }
+      },
+      {
+        "id": "k84", "num": "P84", "date": "2026-07-02", "time": "16:00",
+        "stadium": "SoFi Stadium", "city": "Los Ángeles",
+        "homeSlot": { "type": "group_pos", "group": "H", "pos": 1 },
+        "awaySlot": { "type": "group_pos", "group": "J", "pos": 2 }
+      },
+      {
+        "id": "k85", "num": "P85", "date": "2026-07-03", "time": "00:00",
+        "stadium": "BC Place", "city": "Vancouver",
+        "homeSlot": { "type": "group_pos", "group": "B", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_85",  "label": "3º E/F/G/I/J" }
+      },
+      {
+        "id": "k86", "num": "P86", "date": "2026-07-03", "time": "19:00",
+        "stadium": "Hard Rock Stadium", "city": "Miami",
+        "homeSlot": { "type": "group_pos", "group": "J", "pos": 1 },
+        "awaySlot": { "type": "group_pos", "group": "H", "pos": 2 }
+      },
+      {
+        "id": "k87", "num": "P87", "date": "2026-07-03", "time": "22:30",
+        "stadium": "Arrowhead Stadium", "city": "Kansas City",
+        "homeSlot": { "type": "group_pos", "group": "K", "pos": 1 },
+        "awaySlot": { "type": "third",     "key": "third_87",  "label": "3º D/E/I/J/L" }
+      },
+      {
+        "id": "k88", "num": "P88", "date": "2026-07-03", "time": "15:00",
+        "stadium": "AT&T Stadium", "city": "Dallas",
+        "homeSlot": { "type": "group_pos", "group": "D", "pos": 2 },
+        "awaySlot": { "type": "group_pos", "group": "G", "pos": 2 }
+      }
+    ]
+  },
+  {
+    "id": "oct",
+    "name": "Octavos de Final",
+    "matches": [
+      {
+        "id": "k89", "num": "P89", "date": "2026-07-04", "time": "18:00",
+        "stadium": "Lincoln Financial Field", "city": "Filadelfia",
+        "homeSlot": { "type": "winner", "matchId": "k74" },
+        "awaySlot": { "type": "winner", "matchId": "k77" }
+      },
+      {
+        "id": "k90", "num": "P90", "date": "2026-07-04", "time": "14:00",
+        "stadium": "NRG Stadium", "city": "Houston",
+        "homeSlot": { "type": "winner", "matchId": "k73" },
+        "awaySlot": { "type": "winner", "matchId": "k75" }
+      },
+      {
+        "id": "k91", "num": "P91", "date": "2026-07-05", "time": "17:00",
+        "stadium": "MetLife Stadium", "city": "Nueva Jersey",
+        "homeSlot": { "type": "winner", "matchId": "k76" },
+        "awaySlot": { "type": "winner", "matchId": "k78" }
+      },
+      {
+        "id": "k92", "num": "P92", "date": "2026-07-05", "time": "21:00",
+        "stadium": "Estadio Azteca", "city": "Ciudad de México",
+        "homeSlot": { "type": "winner", "matchId": "k79" },
+        "awaySlot": { "type": "winner", "matchId": "k80" }
+      },
+      {
+        "id": "k93", "num": "P93", "date": "2026-07-06", "time": "16:00",
+        "stadium": "AT&T Stadium", "city": "Dallas",
+        "homeSlot": { "type": "winner", "matchId": "k83" },
+        "awaySlot": { "type": "winner", "matchId": "k84" }
+      },
+      {
+        "id": "k94", "num": "P94", "date": "2026-07-06", "time": "21:00",
+        "stadium": "Lumen Field", "city": "Seattle",
+        "homeSlot": { "type": "winner", "matchId": "k81" },
+        "awaySlot": { "type": "winner", "matchId": "k82" }
+      },
+      {
+        "id": "k95", "num": "P95", "date": "2026-07-07", "time": "13:00",
+        "stadium": "Mercedes Benz Stadium", "city": "Atlanta",
+        "homeSlot": { "type": "winner", "matchId": "k86" },
+        "awaySlot": { "type": "winner", "matchId": "k88" }
+      },
+      {
+        "id": "k96", "num": "P96", "date": "2026-07-07", "time": "17:00",
+        "stadium": "BC Place", "city": "Vancouver",
+        "homeSlot": { "type": "winner", "matchId": "k85" },
+        "awaySlot": { "type": "winner", "matchId": "k87" }
+      }
+    ]
+  },
+  {
+    "id": "qf",
+    "name": "Cuartos de Final",
+    "matches": [
+      {
+        "id": "k97", "num": "P97", "date": "2026-07-09", "time": "17:00",
+        "stadium": "Gillette Stadium", "city": "Boston",
+        "homeSlot": { "type": "winner", "matchId": "k89" },
+        "awaySlot": { "type": "winner", "matchId": "k90" }
+      },
+      {
+        "id": "k98", "num": "P98", "date": "2026-07-10", "time": "16:00",
+        "stadium": "SoFi Stadium", "city": "Los Ángeles",
+        "homeSlot": { "type": "winner", "matchId": "k93" },
+        "awaySlot": { "type": "winner", "matchId": "k94" }
+      },
+      {
+        "id": "k99", "num": "P99", "date": "2026-07-11", "time": "18:00",
+        "stadium": "Hard Rock Stadium", "city": "Miami",
+        "homeSlot": { "type": "winner", "matchId": "k91" },
+        "awaySlot": { "type": "winner", "matchId": "k92" }
+      },
+      {
+        "id": "k100", "num": "P100", "date": "2026-07-11", "time": "22:00",
+        "stadium": "Arrowhead Stadium", "city": "Kansas City",
+        "homeSlot": { "type": "winner", "matchId": "k95" },
+        "awaySlot": { "type": "winner", "matchId": "k96" }
+      }
+    ]
+  },
+  {
+    "id": "sf",
+    "name": "Semifinales",
+    "matches": [
+      {
+        "id": "k101", "num": "P101", "date": "2026-07-14", "time": "16:00",
+        "stadium": "AT&T Stadium", "city": "Dallas",
+        "homeSlot": { "type": "winner", "matchId": "k97" },
+        "awaySlot": { "type": "winner", "matchId": "k98" }
+      },
+      {
+        "id": "k102", "num": "P102", "date": "2026-07-15", "time": "16:00",
+        "stadium": "Mercedes Benz Stadium", "city": "Atlanta",
+        "homeSlot": { "type": "winner", "matchId": "k99" },
+        "awaySlot": { "type": "winner", "matchId": "k100" }
+      }
+    ]
+  },
+  {
+    "id": "tercero",
+    "name": "3er Puesto",
+    "matches": [
+      {
+        "id": "k103", "num": "P103", "date": "2026-07-18", "time": "18:00",
+        "stadium": "Hard Rock Stadium", "city": "Miami",
+        "homeSlot": { "type": "loser", "matchId": "k101" },
+        "awaySlot": { "type": "loser", "matchId": "k102" }
+      }
+    ]
+  },
+  {
+    "id": "final",
+    "name": "FINAL",
+    "matches": [
+      {
+        "id": "k104", "num": "FINAL", "date": "2026-07-19", "time": "16:00",
+        "stadium": "MetLife Stadium", "city": "Nueva Jersey",
+        "homeSlot": { "type": "winner", "matchId": "k101" },
+        "awaySlot": { "type": "winner", "matchId": "k102" }
+      }
+    ]
+  }
+]

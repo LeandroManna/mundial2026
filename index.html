@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO / Social -->
+  <title>Mundial 2026 – Fixture y Resultados</title>
+  <meta name="description" content="Fixture completo del Mundial 2026. Horarios para Argentina, estadios, grupos y eliminatorias." />
+  <meta property="og:title"       content="Mundial 2026 – Fixture y Resultados" />
+  <meta property="og:description" content="Fixture completo, grupos y eliminatorias del Mundial 2026." />
+  <meta property="og:type"        content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png" />
+  <link rel="apple-touch-icon"    href="img/apple-touch-icon.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <a class="site-logo" href="#">
+      <img src="img/logo.png" alt="Mundial 2026" onerror="this.style.display='none'">
+      <div class="site-title">MUNDIAL <span>2026</span></div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-desktop" aria-label="Navegación principal">
+      <button class="nav-btn active" data-tab="fixture">📅 Fixture</button>
+      <button class="nav-btn"        data-tab="grupos">📊 Grupos</button>
+      <button class="nav-btn"        data-tab="elim">⚡ Eliminatorias</button>
+    </nav>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Drawer -->
+  <nav class="nav-drawer" id="navDrawer" aria-label="Menú móvil">
+    <button class="drawer-btn active" data-tab="fixture">📅 Fixture</button>
+    <button class="drawer-btn"        data-tab="grupos">📊 Grupos</button>
+    <button class="drawer-btn"        data-tab="elim">⚡ Eliminatorias</button>
+  </nav>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main class="main-wrap">
+
+  <!-- FIXTURE -->
+  <section id="tab-fixture" class="tab-panel active" aria-labelledby="fixture-title">
+    <div class="section-head">
+      <h1 class="section-title" id="fixture-title">FIXTURE</h1>
+      <p class="section-sub">Todos los partidos · Horarios Argentina · USA / CAN / MEX · 2026</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-pip" style="background:var(--arg)"></div>
+        <span>Argentina</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-pip" style="background:var(--green)"></div>
+        <span>Clasificados (top 2)</span>
+      </div>
+    </div>
+    <div class="day-filter" id="dayFilter" role="group" aria-label="Filtrar por fecha"></div>
+    <div id="fixtureContainer"></div>
+  </section>
+
+  <!-- GRUPOS -->
+  <section id="tab-grupos" class="tab-panel" aria-labelledby="grupos-title">
+    <div class="section-head">
+      <h1 class="section-title" id="grupos-title">GRUPOS</h1>
+      <p class="section-sub">Posiciones actualizadas según los resultados cargados</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-pip" style="background:var(--green)"></div>
+        <span>Clasificado (top 2)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-pip" style="background:var(--arg)"></div>
+        <span>Argentina</span>
+      </div>
+    </div>
+    <div class="grupos-grid" id="gruposContainer"></div>
+  </section>
+
+  <!-- ELIMINATORIAS -->
+  <section id="tab-elim" class="tab-panel" aria-labelledby="elim-title">
+    <div class="section-head">
+      <h1 class="section-title" id="elim-title">ELIMINATORIAS</h1>
+      <p class="section-sub">16avos · Octavos · Cuartos · Semis · 3er Puesto · Final</p>
+    </div>
+    <div id="knockoutContainer"></div>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <p>Mundial 2026 · USA · CAN · MEX · Horarios para Argentina
+  &nbsp;·&nbsp; <a href="https://leandromanna.com" target="_blank" rel="noopener">leandromanna.com</a></p>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
