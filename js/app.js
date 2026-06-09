@@ -97,6 +97,18 @@ function getGroupPositions(letter) {
   return { 1: rows[0]?.name, 2: rows[1]?.name, 3: rows[2]?.name, 4: rows[3]?.name };
 }
 
+// Checks if ALL 6 matches of a group have been played (each team plays 3)
+function isGroupComplete(letter) {
+  const res      = DATA.resultados.partidos || {};
+  const matches  = DATA.partidos.filter(m => m.group === letter);
+  // A group of 4 teams has exactly 6 matches (round-robin)
+  const played   = matches.filter(m => {
+    const sc = res[m.id];
+    return sc && sc.scoreH != null && sc.scoreA != null;
+  });
+  return played.length === matches.length && matches.length > 0;
+}
+
 // ============================================================
 // SLOT RESOLVER
 // Resolves a slot definition to { team, known }
@@ -106,13 +118,16 @@ function getGroupPositions(letter) {
 function resolveSlot(slot) {
   if (!slot) return { team: '?', known: false };
 
-  // 1º / 2º de grupo — auto desde tabla
+  // 1º / 2º de grupo — solo se resuelve cuando el grupo está completo
   if (slot.type === 'group_pos') {
+    const posLabel = slot.pos === 1 ? '1º' : '2º';
+    if (!isGroupComplete(slot.group)) {
+      return { team: `${posLabel} Grupo ${slot.group}`, known: false };
+    }
     const pos  = getGroupPositions(slot.group);
     const team = pos[slot.pos];
     if (team) return { team, known: true };
-    // group not finished yet, show placeholder
-    return { team: `${slot.pos === 1 ? '1º' : '2º'} Grupo ${slot.group}`, known: false };
+    return { team: `${posLabel} Grupo ${slot.group}`, known: false };
   }
 
   // 3º mejor — cargado manualmente en resultados.terceros
