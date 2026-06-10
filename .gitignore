@@ -1,0 +1,21 @@
+# ── Herramientas locales — no se suben al repo público ──
+admin.html
+push.sh
+
+# ── Sistema operativo ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editores ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Node (por si algún día se agrega tooling) ──
+node_modules/
+npm-debug.log*
+
+# ── Netlify ──
+.netlify/

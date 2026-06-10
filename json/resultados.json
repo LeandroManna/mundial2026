@@ -1,21 +1,32 @@
 {
   "_info": "Editá este archivo para cargar resultados. scoreH y scoreA son los goles. Omití la clave si el partido no se jugó.",
-  "_terceros_info": "En 'terceros' cargás manualmente los equipos que llegan como mejor 3ro a cada cruce de 16avos. Usá el nombre exacto del equipo tal como figura en grupos.json.",
+  "_terceros_info": "En 'terceros' cargás manualmente los equipos que llegan como mejor 3ro a cada cruce de 16avos.",
   "partidos": {
-    "m1": { "scoreH": null, "scoreA": null },
-    "m2": { "scoreH": null, "scoreA": null }
-   },
+    "m1": {
+      "scoreH": null,
+      "scoreA": null
+    },
+    "m2": {
+      "scoreH": null,
+      "scoreA": null
+    }
+  },
   "eliminatorias": {
-    "k73": { "scoreH": null, "scoreA": null, "penH": null, "penA": null }
+    "k73": {
+      "scoreH": null,
+      "scoreA": null,
+      "penH": null,
+      "penA": null
+    }
   },
   "terceros": {
-    "third_74":  null,
-    "third_77":  null,
-    "third_79":  null,
-    "third_80":  null,
-    "third_81":  null,
-    "third_82":  null,
-    "third_85":  null,
-    "third_87":  null
+    "third_74": null,
+    "third_77": null,
+    "third_79": null,
+    "third_80": null,
+    "third_81": null,
+    "third_82": null,
+    "third_85": null,
+    "third_87": null
   }
 }
