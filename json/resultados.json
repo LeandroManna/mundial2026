@@ -3,8 +3,8 @@
   "_terceros_info": "En 'terceros' cargás manualmente los equipos que llegan como mejor 3ro a cada cruce de 16avos.",
   "partidos": {
     "m1": {
-      "scoreH": null,
-      "scoreA": null
+      "scoreH": 2,
+      "scoreA": 0
     },
     "m2": {
       "scoreH": null,
