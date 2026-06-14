@@ -19,3 +19,9 @@ npm-debug.log*
 
 # ── Netlify ──
 .netlify/
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+.env
