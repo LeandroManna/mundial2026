@@ -25,6 +25,14 @@
     "m6": {
       "scoreH": 1,
       "scoreA": 1
+    },
+    "m7": {
+      "scoreH": 0,
+      "scoreA": 1
+    },
+    "m8": {
+      "scoreH": 2,
+      "scoreA": 0
     }
   },
   "eliminatorias": {
