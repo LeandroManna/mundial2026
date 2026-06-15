@@ -45,6 +45,10 @@
     "m11": {
       "scoreH": 1,
       "scoreA": 0
+    },
+    "m12": {
+      "scoreH": 5,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
