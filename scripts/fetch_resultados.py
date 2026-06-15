@@ -52,6 +52,7 @@ TEAM_MAP = {
     "Sweden":                          "Suecia",
     "Tunisia":                         "Túnez",
     "Spain":                           "España",
+    "Cape Verde Islands":          "Cabo Verde",
     "Cape Verde":                      "Cabo Verde",
     "Saudi Arabia":                    "Arabia Saudita",
     "Uruguay":                         "Uruguay",

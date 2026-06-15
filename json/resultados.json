@@ -41,6 +41,18 @@
     "m10": {
       "scoreH": 2,
       "scoreA": 2
+    },
+    "m11": {
+      "scoreH": 1,
+      "scoreA": 0
+    },
+    "m12": {
+      "scoreH": 5,
+      "scoreA": 1
+    },
+    "m13": {
+      "scoreH": 0,
+      "scoreA": 0
     }
   },
   "eliminatorias": {
