@@ -85,6 +85,10 @@
     "m21": {
       "scoreH": 1,
       "scoreA": 1
+    },
+    "m22": {
+      "scoreH": 4,
+      "scoreA": 2
     }
   },
   "eliminatorias": {
