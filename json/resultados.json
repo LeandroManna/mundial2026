@@ -101,6 +101,10 @@
     "m25": {
       "scoreH": 1,
       "scoreA": 1
+    },
+    "m26": {
+      "scoreH": 4,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
