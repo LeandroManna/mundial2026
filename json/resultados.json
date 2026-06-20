@@ -117,6 +117,10 @@
     "m29": {
       "scoreH": 2,
       "scoreA": 0
+    },
+    "m30": {
+      "scoreH": 0,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
