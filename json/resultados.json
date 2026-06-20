@@ -133,6 +133,10 @@
     "m33": {
       "scoreH": 5,
       "scoreA": 1
+    },
+    "m34": {
+      "scoreH": 2,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
