@@ -129,6 +129,10 @@
     "m32": {
       "scoreH": 0,
       "scoreA": 1
+    },
+    "m33": {
+      "scoreH": 5,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
