@@ -147,7 +147,11 @@
       "scoreA": 4
     },
     "m37": {
-      "scoreH": 5,
+      "scoreH": 4,
+      "scoreA": 0
+    },
+    "m38": {
+      "scoreH": 0,
       "scoreA": 0
     }
   },
