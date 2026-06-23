@@ -177,6 +177,10 @@
     "m44": {
       "scoreH": 1,
       "scoreA": 2
+    },
+    "m45": {
+      "scoreH": 5,
+      "scoreA": 0
     }
   },
   "eliminatorias": {
