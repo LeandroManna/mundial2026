@@ -189,6 +189,10 @@
     "m47": {
       "scoreH": 0,
       "scoreA": 1
+    },
+    "m48": {
+      "scoreH": 1,
+      "scoreA": 0
     }
   },
   "eliminatorias": {
