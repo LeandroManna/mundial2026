@@ -193,6 +193,14 @@
     "m48": {
       "scoreH": 1,
       "scoreA": 0
+    },
+    "m49": {
+      "scoreH": 2,
+      "scoreA": 1
+    },
+    "m50": {
+      "scoreH": 3,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
