@@ -47,7 +47,7 @@
   { "id": "m45", "date": "2026-06-23", "time": "14:00", "home": "Portugal",       "away": "Uzbekistán",    "group": "K", "stadium": "NRG Stadium",            "city": "Houston",          "tv": ["DSports","TyC Sports","Telefé"] },
   { "id": "m46", "date": "2026-06-23", "time": "17:00", "home": "Inglaterra",     "away": "Ghana",         "group": "L", "stadium": "Gillette Stadium",        "city": "Boston",           "tv": ["DSports","Telefé"] },
   { "id": "m47", "date": "2026-06-23", "time": "20:00", "home": "Panamá",         "away": "Croacia",       "group": "L", "stadium": "BMO Field",               "city": "Toronto",          "tv": ["DSports","TyC Sports"] },
-  { "id": "m48", "date": "2026-06-23", "time": "23:00", "home": "RD Congo",       "away": "Colombia",      "group": "K", "stadium": "Estadio Akron",           "city": "Guadalajara",      "tv": ["DSports"] },
+  { "id": "m48", "date": "2026-06-23", "time": "23:00", "home": "Colombia",       "away": "RD Congo",      "group": "K", "stadium": "Estadio Akron",           "city": "Guadalajara",      "tv": ["DSports"] },
 
   { "id": "m49", "date": "2026-06-24", "time": "16:00", "home": "Suiza",          "away": "Canadá",        "group": "B", "stadium": "BC Place",                "city": "Vancouver",        "tv": ["DSports","TyC Sports"] },
   { "id": "m50", "date": "2026-06-24", "time": "16:00", "home": "Bosnia y Herz.", "away": "Qatar",         "group": "B", "stadium": "Lumen Field",             "city": "Seattle",          "tv": ["DSports"] },
