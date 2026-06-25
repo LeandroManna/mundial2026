@@ -60,7 +60,7 @@
   { "id": "m57", "date": "2026-06-25", "time": "20:00", "home": "Japón",          "away": "Suecia",        "group": "F", "stadium": "AT&T Stadium",            "city": "Dallas",           "tv": ["DSports","TyC Sports"] },
   { "id": "m58", "date": "2026-06-25", "time": "20:00", "home": "Túnez",          "away": "Países Bajos",  "group": "F", "stadium": "Arrowhead Stadium",       "city": "Kansas City",      "tv": ["DSports"] },
   { "id": "m59", "date": "2026-06-25", "time": "23:00", "home": "Paraguay",       "away": "Australia",     "group": "D", "stadium": "Levi's Stadium",          "city": "San Francisco",    "tv": ["DSports","Telefé"] },
-  { "id": "m60", "date": "2026-06-26", "time": "23:00", "home": "Turquía",        "away": "Estados Unidos","group": "D", "stadium": "SoFi Stadium",            "city": "Los Ángeles",      "tv": ["DSports","TyC Sports"] },
+  { "id": "m60", "date": "2026-06-25", "time": "23:00", "home": "Turquía",        "away": "Estados Unidos","group": "D", "stadium": "SoFi Stadium",            "city": "Los Ángeles",      "tv": ["DSports","TyC Sports"] },
   { "id": "m61", "date": "2026-06-26", "time": "16:00", "home": "Noruega",        "away": "Francia",       "group": "I", "stadium": "Gillette Stadium",        "city": "Boston",           "tv": ["DSports","TyC Sports","Telefé"] },
   { "id": "m62", "date": "2026-06-26", "time": "16:00", "home": "Senegal",        "away": "Irak",          "group": "I", "stadium": "BMO Field",               "city": "Toronto",          "tv": ["DSports"] },
   { "id": "m63", "date": "2026-06-26", "time": "21:00", "home": "Cabo Verde",     "away": "Arabia Saudita","group": "H", "stadium": "NRG Stadium",            "city": "Houston",          "tv": ["DSports"] },
