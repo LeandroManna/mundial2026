@@ -317,7 +317,7 @@ function renderGrupos() {
 }
 
 // ============================================================
-// RENDER ELIMINATORIAS
+// RENDER ELIMINATORIAS (Actualizado con Canales de TV)
 // ============================================================
 function renderEliminatorias() {
   const res = DATA.resultados.eliminatorias || {};
@@ -337,6 +337,9 @@ function renderEliminatorias() {
 
       const hSlot  = resolveSlot(m.homeSlot);
       const aSlot  = resolveSlot(m.awaySlot);
+
+      // Renderizado seguro de badges de TV (igual que en grupos)
+      const tvBadges = m.tv ? m.tv.map(t => `<span class="tv-badge">${t}</span>`).join('') : '';
 
       html += `<div class="ko-card${isFinal?' final-card':''}">
         <div class="ko-card-top">
@@ -363,6 +366,11 @@ function renderEliminatorias() {
           </div>
         </div>
         ${hasPen ? `<div class="ko-pen-row">Penales: <strong>${sc.penH} – ${sc.penA}</strong></div>` : ''}
+        
+        <!-- Bloque añadido para renderizar los canales debajo de cada tarjeta de eliminación -->
+        <div class="match-meta" style="margin-top: 8px; border-top: 1px dashed dotted var(--border); padding-top: 6px;">
+          <div class="meta-tv">${tvBadges}</div>
+        </div>
       </div>`;
     });
 
