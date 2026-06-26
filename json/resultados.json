@@ -61,6 +61,186 @@
     "m15": {
       "scoreH": 1,
       "scoreA": 1
+    },
+    "m16": {
+      "scoreH": 2,
+      "scoreA": 2
+    },
+    "m17": {
+      "scoreH": 3,
+      "scoreA": 1
+    },
+    "m18": {
+      "scoreH": 1,
+      "scoreA": 4
+    },
+    "m19": {
+      "scoreH": 3,
+      "scoreA": 0
+    },
+    "m20": {
+      "scoreH": 3,
+      "scoreA": 1
+    },
+    "m21": {
+      "scoreH": 1,
+      "scoreA": 1
+    },
+    "m22": {
+      "scoreH": 4,
+      "scoreA": 2
+    },
+    "m23": {
+      "scoreH": 1,
+      "scoreA": 0
+    },
+    "m24": {
+      "scoreH": 1,
+      "scoreA": 3
+    },
+    "m25": {
+      "scoreH": 1,
+      "scoreA": 1
+    },
+    "m26": {
+      "scoreH": 4,
+      "scoreA": 1
+    },
+    "m27": {
+      "scoreH": 6,
+      "scoreA": 0
+    },
+    "m28": {
+      "scoreH": 1,
+      "scoreA": 0
+    },
+    "m29": {
+      "scoreH": 2,
+      "scoreA": 0
+    },
+    "m30": {
+      "scoreH": 0,
+      "scoreA": 1
+    },
+    "m31": {
+      "scoreH": 3,
+      "scoreA": 0
+    },
+    "m32": {
+      "scoreH": 0,
+      "scoreA": 1
+    },
+    "m33": {
+      "scoreH": 5,
+      "scoreA": 1
+    },
+    "m34": {
+      "scoreH": 2,
+      "scoreA": 1
+    },
+    "m35": {
+      "scoreH": 0,
+      "scoreA": 0
+    },
+    "m36": {
+      "scoreH": 0,
+      "scoreA": 4
+    },
+    "m37": {
+      "scoreH": 4,
+      "scoreA": 0
+    },
+    "m38": {
+      "scoreH": 0,
+      "scoreA": 0
+    },
+    "m39": {
+      "scoreH": 2,
+      "scoreA": 2
+    },
+    "m40": {
+      "scoreH": 1,
+      "scoreA": 3
+    },
+    "m41": {
+      "scoreH": 2,
+      "scoreA": 0
+    },
+    "m42": {
+      "scoreH": 3,
+      "scoreA": 0
+    },
+    "m43": {
+      "scoreH": 3,
+      "scoreA": 2
+    },
+    "m44": {
+      "scoreH": 1,
+      "scoreA": 2
+    },
+    "m45": {
+      "scoreH": 5,
+      "scoreA": 0
+    },
+    "m46": {
+      "scoreH": 0,
+      "scoreA": 0
+    },
+    "m47": {
+      "scoreH": 0,
+      "scoreA": 1
+    },
+    "m48": {
+      "scoreH": 1,
+      "scoreA": 0
+    },
+    "m49": {
+      "scoreH": 2,
+      "scoreA": 1
+    },
+    "m50": {
+      "scoreH": 3,
+      "scoreA": 1
+    },
+    "m52": {
+      "scoreH": 4,
+      "scoreA": 2
+    },
+    "m51": {
+      "scoreH": 0,
+      "scoreA": 3
+    },
+    "m53": {
+      "scoreH": 0,
+      "scoreA": 3
+    },
+    "m54": {
+      "scoreH": 1,
+      "scoreA": 0
+    },
+    "m56": {
+      "scoreH": 2,
+      "scoreA": 1
+    },
+    "m55": {
+      "scoreH": 0,
+      "scoreA": 2
+    },
+    "m58": {
+      "scoreH": 1,
+      "scoreA": 3
+    },
+    "m57": {
+      "scoreH": 1,
+      "scoreA": 1
+    },
+    "m60": {
+      "scoreH": 3,
+      "scoreA": 2
+    },
+    "m59": {
+      "scoreH": 0,
+      "scoreA": 0
     }
   },
   "eliminatorias": {
