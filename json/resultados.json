@@ -241,6 +241,30 @@
     "m59": {
       "scoreH": 0,
       "scoreA": 0
+    },
+    "m61": {
+      "scoreH": 1,
+      "scoreA": 4
+    },
+    "m62": {
+      "scoreH": 5,
+      "scoreA": 0
+    },
+    "m64": {
+      "scoreH": 0,
+      "scoreA": 1
+    },
+    "m63": {
+      "scoreH": 0,
+      "scoreA": 0
+    },
+    "m66": {
+      "scoreH": 1,
+      "scoreA": 5
+    },
+    "m65": {
+      "scoreH": 1,
+      "scoreA": 1
     }
   },
   "eliminatorias": {
