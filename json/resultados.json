@@ -249,6 +249,14 @@
     "m62": {
       "scoreH": 5,
       "scoreA": 0
+    },
+    "m64": {
+      "scoreH": 0,
+      "scoreA": 1
+    },
+    "m63": {
+      "scoreH": 0,
+      "scoreA": 0
     }
   },
   "eliminatorias": {
