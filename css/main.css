@@ -209,32 +209,90 @@ button { font-family: var(--font-body); cursor: pointer; }
 /* ============================================================
    DAY FILTER
    ============================================================ */
-.day-filter {
+/* ── FILTROS DESPLEGABLES ── */
+.filtros-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
   margin-bottom: 22px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
 }
-.day-btn {
-  background: var(--white);
-  border: 1px solid var(--border);
-  color: var(--text2);
-  font-size: 12px;
-  font-weight: 500;
-  padding: 5px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all .2s;
-  white-space: nowrap;
-  box-shadow: var(--shadow-sm);
+.filtro-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
-.day-btn:hover { border-color: var(--red); color: var(--red); }
-.day-btn.active {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--white);
+.filtro-label {
+  font-size: 10px;
   font-weight: 700;
-  box-shadow: 0 2px 8px var(--red-glow);
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.filtro-select {
+  padding: 8px 12px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  /* iOS Safari necesita esto para mostrar bien el select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Flecha manual compatible con todos los browsers */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+.filtro-select:focus {
+  border-color: #cc0033;
+  background-color: #ffffff;
+}
+.filtro-reset {
+  padding: 8px 14px;
+  background: none;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  color: #999999;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.filtro-reset:hover { border-color: #cc0033; color: #cc0033; }
+
+@media (max-width: 600px) {
+  .filtros-bar { gap: 8px; padding: 12px; }
+  .filtro-group { min-width: calc(50% - 4px); -webkit-box-flex: 0; -webkit-flex: 0 0 calc(50% - 4px); flex: 0 0 calc(50% - 4px); }
+  .filtro-reset { width: 100%; text-align: center; }
 }
 
 /* ============================================================

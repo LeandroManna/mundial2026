@@ -26,14 +26,14 @@
   <div class="header-inner">
 
     <a class="site-logo" href="#">
-      <!-- <img src="#" alt="Mundial 2026" onerror="this.style.display='none'"> -->
+      <img src="img/logo.png" alt="Mundial 2026" onerror="this.style.display='none'">
       <div class="site-title">MUNDIAL <span>2026</span></div>
     </a>
 
     <!-- Desktop Nav -->
     <nav class="nav-desktop" aria-label="Navegación principal">
-      <button class="nav-btn active" data-tab="fixture">📅 Fase de Grupos</button>
-      <button class="nav-btn"        data-tab="grupos">📊 Tablas</button>
+      <button class="nav-btn active" data-tab="fixture">📅 Fixture</button>
+      <button class="nav-btn"        data-tab="grupos">📊 Grupos</button>
       <button class="nav-btn"        data-tab="elim">⚡ Eliminatorias</button>
     </nav>
 
@@ -48,8 +48,8 @@
 
   <!-- Mobile Drawer -->
   <nav class="nav-drawer" id="navDrawer" aria-label="Menú móvil">
-    <button class="drawer-btn active" data-tab="fixture">📅 Fase de Grupos</button>
-    <button class="drawer-btn"        data-tab="grupos">📊 Tablas</button>
+    <button class="drawer-btn active" data-tab="fixture">📅 Fixture</button>
+    <button class="drawer-btn"        data-tab="grupos">📊 Grupos</button>
     <button class="drawer-btn"        data-tab="elim">⚡ Eliminatorias</button>
   </nav>
 </header>
@@ -60,7 +60,7 @@
   <!-- FIXTURE -->
   <section id="tab-fixture" class="tab-panel active" aria-labelledby="fixture-title">
     <div class="section-head">
-      <h1 class="section-title" id="fixture-title">FASE DE GRUPOS</h1>
+      <h1 class="section-title" id="fixture-title">FIXTURE</h1>
       <p class="section-sub">Todos los partidos · Horarios Argentina · USA / CAN / MEX · 2026</p>
     </div>
     <div class="legend">
@@ -73,14 +73,14 @@
         <span>Clasificados (top 2)</span>
       </div>
     </div>
-    <div class="day-filter" id="dayFilter" role="group" aria-label="Filtrar por fecha"></div>
+    <div class="filtros-bar" id="filtrosBar"></div>
     <div id="fixtureContainer"></div>
   </section>
 
   <!-- GRUPOS -->
   <section id="tab-grupos" class="tab-panel" aria-labelledby="grupos-title">
     <div class="section-head">
-      <h1 class="section-title" id="grupos-title">TABLAS</h1>
+      <h1 class="section-title" id="grupos-title">GRUPOS</h1>
       <p class="section-sub">Posiciones actualizadas según los resultados cargados</p>
     </div>
     <div class="legend">
