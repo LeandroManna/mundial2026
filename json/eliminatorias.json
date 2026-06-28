@@ -8,91 +8,91 @@
         "stadium": "SoFi Stadium", "city": "Los Ángeles",
         "homeSlot": { "type": "group_pos", "group": "A", "pos": 2 },
         "awaySlot": { "type": "group_pos", "group": "B", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k74", "num": "P74", "date": "2026-06-29", "time": "17:30",
         "stadium": "Gillette Stadium", "city": "Boston",
         "homeSlot": { "type": "group_pos", "group": "E", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_74",  "label": "3º A/B/C/D/F" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "TyC Sports", "Paramount+"]
       },
       {
         "id": "k75", "num": "P75", "date": "2026-06-29", "time": "22:00",
         "stadium": "Estadio BBVA", "city": "Monterrey",
         "homeSlot": { "type": "group_pos", "group": "F", "pos": 1 },
         "awaySlot": { "type": "group_pos", "group": "C", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k76", "num": "P76", "date": "2026-06-29", "time": "14:00",
         "stadium": "NRG Stadium", "city": "Houston",
         "homeSlot": { "type": "group_pos", "group": "C", "pos": 1 },
         "awaySlot": { "type": "group_pos", "group": "F", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro", "Telefé"]
       },
       {
         "id": "k77", "num": "P77", "date": "2026-06-30", "time": "18:00",
         "stadium": "MetLife Stadium", "city": "Nueva Jersey",
         "homeSlot": { "type": "group_pos", "group": "I", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_77",  "label": "3º C/D/F/G/H" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "TyC Sports", "Paramount+"]
       },
       {
         "id": "k78", "num": "P78", "date": "2026-06-30", "time": "14:00",
         "stadium": "AT&T Stadium", "city": "Dallas",
         "homeSlot": { "type": "group_pos", "group": "E", "pos": 2 },
         "awaySlot": { "type": "group_pos", "group": "I", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k79", "num": "P79", "date": "2026-06-30", "time": "22:00",
         "stadium": "Estadio Azteca", "city": "Ciudad de México",
         "homeSlot": { "type": "group_pos", "group": "A", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_79",  "label": "3º C/E/F/H/I" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k80", "num": "P80", "date": "2026-07-01", "time": "13:00",
         "stadium": "Mercedes Benz Stadium", "city": "Atlanta",
         "homeSlot": { "type": "group_pos", "group": "L", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_80",  "label": "3º E/H/I/J/K" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "TyC Sports", "TV Pública"]
       },
       {
         "id": "k81", "num": "P81", "date": "2026-07-01", "time": "21:00",
         "stadium": "Levi's Stadium", "city": "San Francisco",
         "homeSlot": { "type": "group_pos", "group": "D", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_81",  "label": "3º B/E/F/I/J" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "TyC Sports"]
       },
       {
         "id": "k82", "num": "P82", "date": "2026-07-01", "time": "17:00",
         "stadium": "Lumen Field", "city": "Seattle",
         "homeSlot": { "type": "group_pos", "group": "G", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_82",  "label": "3º A/E/H/I/J" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k83", "num": "P83", "date": "2026-07-02", "time": "20:00",
         "stadium": "BMO Field", "city": "Toronto",
         "homeSlot": { "type": "group_pos", "group": "K", "pos": 2 },
         "awaySlot": { "type": "group_pos", "group": "L", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "TyC Sports", "Telefé"]
       },
       {
         "id": "k84", "num": "P84", "date": "2026-07-02", "time": "16:00",
         "stadium": "SoFi Stadium", "city": "Los Ángeles",
         "homeSlot": { "type": "group_pos", "group": "H", "pos": 1 },
         "awaySlot": { "type": "group_pos", "group": "J", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k85", "num": "P85", "date": "2026-07-03", "time": "00:00",
         "stadium": "BC Place", "city": "Vancouver",
         "homeSlot": { "type": "group_pos", "group": "B", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_85",  "label": "3º E/F/G/I/J" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k86", "num": "P86", "date": "2026-07-03", "time": "19:00",
@@ -106,14 +106,14 @@
         "stadium": "Arrowhead Stadium", "city": "Kansas City",
         "homeSlot": { "type": "group_pos", "group": "K", "pos": 1 },
         "awaySlot": { "type": "third",     "key": "third_87",  "label": "3º D/E/I/J/L" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "Flow", "Telecentro"]
       },
       {
         "id": "k88", "num": "P88", "date": "2026-07-03", "time": "15:00",
         "stadium": "AT&T Stadium", "city": "Dallas",
         "homeSlot": { "type": "group_pos", "group": "D", "pos": 2 },
         "awaySlot": { "type": "group_pos", "group": "G", "pos": 2 },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Paramount+", "TyC Sports"]
       }
     ]
   },
