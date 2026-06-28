@@ -281,6 +281,14 @@
     "m70": {
       "scoreH": 3,
       "scoreA": 1
+    },
+    "m72": {
+      "scoreH": 1,
+      "scoreA": 3
+    },
+    "m71": {
+      "scoreH": 3,
+      "scoreA": 3
     }
   },
   "eliminatorias": {
