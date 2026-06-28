@@ -293,10 +293,8 @@
   },
   "eliminatorias": {
     "k73": {
-      "scoreH": null,
-      "scoreA": null,
-      "penH": null,
-      "penA": null
+      "scoreH": 0,
+      "scoreA": 1
     }
   },
   "terceros": {
@@ -308,5 +306,11 @@
     "third_82": "Senegal",
     "third_85": "Argelia",
     "third_87": "Ghana"
+  },
+  "_teams": {
+    "k73": {
+      "home": "Sudáfrica",
+      "away": "Canadá"
+    }
   }
 }
