@@ -26,9 +26,17 @@ ELIMINATORIAS_PATH = "json/eliminatorias.json"
 
 STATUS_FINISHED = {"FINISHED"}
 
+# Stages confirmados y probables según patrón LAST_N de la API
+# LAST_32 = 16avos (confirmado)
+# LAST_16 = 8vos   (probable)
+# LAST_8  = cuartos (probable)
+# LAST_4  = semis  (probable)
+# THIRD_PLACE y FINAL = confirmados por nombre
 STAGES_KO = {
-    "LAST_32", "LAST_16", "QUARTER_FINALS", "SEMI_FINALS",
-    "THIRD_PLACE", "FINAL"
+    "LAST_32", "LAST_16", "LAST_8", "LAST_4",
+    "QUARTER_FINALS", "SEMI_FINALS",
+    "THIRD_PLACE", "THIRD_PLACE_MATCH",
+    "FINAL"
 }
 
 # ── MAPEO nombres API → español ───────────────────────────────
