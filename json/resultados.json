@@ -299,6 +299,12 @@
     "k76": {
       "scoreH": 2,
       "scoreA": 1
+    },
+    "k74": {
+      "scoreH": 1,
+      "scoreA": 1,
+      "penH": 5,
+      "penA": 5
     }
   },
   "terceros": {
@@ -319,6 +325,10 @@
     "k76": {
       "home": "Brasil",
       "away": "Japón"
+    },
+    "k74": {
+      "home": "Alemania",
+      "away": "Paraguay"
     }
   }
 }
