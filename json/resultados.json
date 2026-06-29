@@ -295,6 +295,10 @@
     "k73": {
       "scoreH": 0,
       "scoreA": 1
+    },
+    "k76": {
+      "scoreH": 2,
+      "scoreA": 1
     }
   },
   "terceros": {
@@ -311,6 +315,10 @@
     "k73": {
       "home": "Sudáfrica",
       "away": "Canadá"
+    },
+    "k76": {
+      "home": "Brasil",
+      "away": "Japón"
     }
   }
 }
