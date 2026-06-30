@@ -305,6 +305,12 @@
       "scoreA": 1,
       "penH": 3,
       "penA": 4
+    },
+    "k75": {
+      "scoreH": 1,
+      "scoreA": 1,
+      "penH": 2,
+      "penA": 3
     }
   },
   "terceros": {
@@ -329,6 +335,10 @@
     "k74": {
       "home": "Alemania",
       "away": "Paraguay"
+    },
+    "k75": {
+      "home": "Países Bajos",
+      "away": "Marruecos"
     }
   }
 }
