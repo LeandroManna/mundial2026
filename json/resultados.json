@@ -315,6 +315,10 @@
     "k78": {
       "scoreH": 1,
       "scoreA": 2
+    },
+    "k77": {
+      "scoreH": 3,
+      "scoreA": 0
     }
   },
   "terceros": {
@@ -347,6 +351,10 @@
     "k78": {
       "home": "Costa de Marfil",
       "away": "Noruega"
+    },
+    "k77": {
+      "home": "Francia",
+      "away": "Suecia"
     }
   }
 }
