@@ -311,6 +311,10 @@
       "scoreA": 1,
       "penH": 2,
       "penA": 3
+    },
+    "k78": {
+      "scoreH": 1,
+      "scoreA": 2
     }
   },
   "terceros": {
@@ -339,6 +343,10 @@
     "k75": {
       "home": "Países Bajos",
       "away": "Marruecos"
+    },
+    "k78": {
+      "home": "Costa de Marfil",
+      "away": "Noruega"
     }
   }
 }
