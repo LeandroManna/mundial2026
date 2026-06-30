@@ -157,15 +157,55 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 def extract_score(match):
-    score  = match.get("score", {})
-    reg    = score.get("regularTime", {})
-    ft     = score.get("fullTime", {})
-    base_h = reg.get("home") if reg.get("home") is not None else ft.get("home")
-    base_a = reg.get("away") if reg.get("away") is not None else ft.get("away")
-    pen    = score.get("penalties", {})
-    pen_h  = pen.get("home")
-    pen_a  = pen.get("away")
-    return base_h, base_a, pen_h, pen_a
+    """
+    Extrae el score de un partido KO.
+
+    Estructura de la API:
+      regularTime: goles en 90min
+      extraTime:   goles en tiempo extra (ET)
+      penalties:   penales convertidos en toda la tanda (NO es el marcador tradicional)
+      fullTime:    acumulado total (reg + et + pen)
+      duration:    REGULAR | EXTRA_TIME | PENALTY_SHOOTOUT
+
+    Estrategia:
+      - scoreH/A = regularTime + extraTime (lo que se muestra en pantalla)
+      - Si hubo ET: sumamos extraTime a regularTime
+      - Si hubo penales: guardamos penWinner (home/away) basado en fullTime
+      - NO usamos el campo penalties de la API porque no refleja el marcador
+        tradicional (ej: 4-3), sino todos los penales convertidos incluyendo
+        el definitivo de muerte súbita
+    """
+    score    = match.get("score", {})
+    duration = score.get("duration", "REGULAR")
+    reg      = score.get("regularTime", {})
+    et       = score.get("extraTime",   {})
+    ft       = score.get("fullTime",    {})
+
+    reg_h = reg.get("home")
+    reg_a = reg.get("away")
+    et_h  = et.get("home") or 0
+    et_a  = et.get("away") or 0
+
+    # Score a mostrar = 90min + ET (si los hubo)
+    if reg_h is not None:
+        base_h = reg_h + (et_h if duration in ("EXTRA_TIME", "PENALTY_SHOOTOUT") else 0)
+        base_a = reg_a + (et_a if duration in ("EXTRA_TIME", "PENALTY_SHOOTOUT") else 0)
+    else:
+        # Fallback: usar fullTime si no hay regularTime
+        base_h = ft.get("home")
+        base_a = ft.get("away")
+
+    # Penales: fullTime - regularTime - extraTime
+    # Si el resultado es 0-0 no hubo penales, si es >0 hubo penales
+    pen_h = pen_a = None
+    if duration == "PENALTY_SHOOTOUT":
+        ft_h = ft.get("home")
+        ft_a = ft.get("away")
+        if ft_h is not None and ft_a is not None:
+            pen_h = ft_h - (reg_h or 0) - et_h
+            pen_a = ft_a - (reg_a or 0) - et_a
+
+    return base_h, base_a, pen_h, pen_a, duration
 
 def resolve_winner(match_id, resultados, eliminatorias_data):
     """Resuelve el ganador de un partido KO ya jugado."""
@@ -334,7 +374,7 @@ def main():
         stage     = match.get("stage", "")
         home_name = normalize(match.get("homeTeam", {}).get("name", ""))
         away_name = normalize(match.get("awayTeam", {}).get("name", ""))
-        base_h, base_a, pen_h, pen_a = extract_score(match)
+        base_h, base_a, pen_h, pen_a, duration = extract_score(match)
 
         if base_h is None or base_a is None:
             print(f"  ⚠️  Sin score: {home_name} vs {away_name}")
@@ -350,11 +390,11 @@ def main():
             continue
 
         result = {"scoreH": base_h, "scoreA": base_a}
-        if pen_h is not None and pen_a is not None:
+        if pen_h is not None and pen_a is not None and (pen_h > 0 or pen_a > 0):
             result["penH"] = pen_h
             result["penA"] = pen_a
 
-        pen_str  = f" (pen {pen_h}-{pen_a})" if "penH" in result else ""
+        pen_str = f" (pen {pen_h}-{pen_a})" if result.get("penH") is not None else ""
         existing = resultados["eliminatorias"].get(match_id, {})
 
         if existing != result:
