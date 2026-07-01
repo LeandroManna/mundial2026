@@ -323,6 +323,10 @@
     "k79": {
       "scoreH": 2,
       "scoreA": 0
+    },
+    "k80": {
+      "scoreH": 2,
+      "scoreA": 1
     }
   },
   "terceros": {
@@ -363,6 +367,10 @@
     "k79": {
       "home": "México",
       "away": "Ecuador"
+    },
+    "k80": {
+      "home": "Inglaterra",
+      "away": "RD Congo"
     }
   }
 }
