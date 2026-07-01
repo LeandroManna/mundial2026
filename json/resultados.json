@@ -319,6 +319,10 @@
     "k77": {
       "scoreH": 3,
       "scoreA": 0
+    },
+    "k79": {
+      "scoreH": 2,
+      "scoreA": 0
     }
   },
   "terceros": {
@@ -355,6 +359,10 @@
     "k77": {
       "home": "Francia",
       "away": "Suecia"
+    },
+    "k79": {
+      "home": "México",
+      "away": "Ecuador"
     }
   }
 }
