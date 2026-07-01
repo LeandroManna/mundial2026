@@ -327,6 +327,10 @@
     "k80": {
       "scoreH": 2,
       "scoreA": 1
+    },
+    "k82": {
+      "scoreH": 3,
+      "scoreA": 2
     }
   },
   "terceros": {
@@ -371,6 +375,10 @@
     "k80": {
       "home": "Inglaterra",
       "away": "RD Congo"
+    },
+    "k82": {
+      "home": "Bélgica",
+      "away": "Senegal"
     }
   }
 }
