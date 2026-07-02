@@ -335,6 +335,10 @@
     "k81": {
       "scoreH": 2,
       "scoreA": 0
+    },
+    "k84": {
+      "scoreH": 3,
+      "scoreA": 0
     }
   },
   "terceros": {
@@ -387,6 +391,10 @@
     "k81": {
       "home": "Estados Unidos",
       "away": "Bosnia y Herz."
+    },
+    "k84": {
+      "home": "España",
+      "away": "Austria"
     }
   }
 }
