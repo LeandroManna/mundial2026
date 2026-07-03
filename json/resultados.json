@@ -339,6 +339,10 @@
     "k84": {
       "scoreH": 3,
       "scoreA": 0
+    },
+    "k83": {
+      "scoreH": 2,
+      "scoreA": 2
     }
   },
   "terceros": {
@@ -395,6 +399,10 @@
     "k84": {
       "home": "España",
       "away": "Austria"
+    },
+    "k83": {
+      "home": "Portugal",
+      "away": "Croacia"
     }
   }
 }
