@@ -342,7 +342,11 @@
     },
     "k83": {
       "scoreH": 2,
-      "scoreA": 2
+      "scoreA": 1
+    },
+    "k85": {
+      "scoreH": 2,
+      "scoreA": 0
     }
   },
   "terceros": {
@@ -403,6 +407,10 @@
     "k83": {
       "home": "Portugal",
       "away": "Croacia"
+    },
+    "k85": {
+      "home": "Suiza",
+      "away": "Argelia"
     }
   }
 }
