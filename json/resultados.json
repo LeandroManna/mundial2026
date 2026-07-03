@@ -347,6 +347,12 @@
     "k85": {
       "scoreH": 2,
       "scoreA": 0
+    },
+    "k88": {
+      "scoreH": 1,
+      "scoreA": 1,
+      "penH": 2,
+      "penA": 4
     }
   },
   "terceros": {
@@ -411,6 +417,10 @@
     "k85": {
       "home": "Suiza",
       "away": "Argelia"
+    },
+    "k88": {
+      "home": "Australia",
+      "away": "Egipto"
     }
   }
 }
