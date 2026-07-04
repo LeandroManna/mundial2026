@@ -357,6 +357,10 @@
     "k86": {
       "scoreH": 3,
       "scoreA": 2
+    },
+    "k87": {
+      "scoreH": 1,
+      "scoreA": 0
     }
   },
   "terceros": {
@@ -429,6 +433,10 @@
     "k86": {
       "home": "Argentina",
       "away": "Cabo Verde"
+    },
+    "k87": {
+      "home": "Colombia",
+      "away": "Ghana"
     }
   }
 }
