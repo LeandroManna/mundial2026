@@ -353,6 +353,10 @@
       "scoreA": 1,
       "penH": 2,
       "penA": 4
+    },
+    "k86": {
+      "scoreH": 3,
+      "scoreA": 2
     }
   },
   "terceros": {
@@ -421,6 +425,10 @@
     "k88": {
       "home": "Australia",
       "away": "Egipto"
+    },
+    "k86": {
+      "home": "Argentina",
+      "away": "Cabo Verde"
     }
   }
 }
