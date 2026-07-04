@@ -361,6 +361,10 @@
     "k87": {
       "scoreH": 1,
       "scoreA": 0
+    },
+    "k90": {
+      "scoreH": 0,
+      "scoreA": 3
     }
   },
   "terceros": {
@@ -437,6 +441,10 @@
     "k87": {
       "home": "Colombia",
       "away": "Ghana"
+    },
+    "k90": {
+      "home": "Canadá",
+      "away": "Marruecos"
     }
   }
 }
