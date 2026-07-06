@@ -373,6 +373,10 @@
     "k91": {
       "scoreH": 1,
       "scoreA": 2
+    },
+    "k92": {
+      "scoreH": 2,
+      "scoreA": 3
     }
   },
   "terceros": {
@@ -461,6 +465,10 @@
     "k91": {
       "home": "Brasil",
       "away": "Noruega"
+    },
+    "k92": {
+      "home": "México",
+      "away": "Inglaterra"
     }
   }
 }
