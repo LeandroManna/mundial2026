@@ -385,6 +385,10 @@
     "k94": {
       "scoreH": 1,
       "scoreA": 4
+    },
+    "k95": {
+      "scoreH": 3,
+      "scoreA": 2
     }
   },
   "terceros": {
@@ -485,6 +489,10 @@
     "k94": {
       "home": "Estados Unidos",
       "away": "Bélgica"
+    },
+    "k95": {
+      "home": "Argentina",
+      "away": "Egipto"
     }
   }
 }
