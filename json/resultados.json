@@ -381,6 +381,10 @@
     "k93": {
       "scoreH": 0,
       "scoreA": 1
+    },
+    "k94": {
+      "scoreH": 1,
+      "scoreA": 4
     }
   },
   "terceros": {
@@ -477,6 +481,10 @@
     "k93": {
       "home": "Portugal",
       "away": "España"
+    },
+    "k94": {
+      "home": "Estados Unidos",
+      "away": "Bélgica"
     }
   }
 }
