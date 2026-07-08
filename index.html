@@ -34,7 +34,19 @@
     <nav class="nav-desktop" aria-label="Navegación principal">
       <button class="nav-btn active" data-tab="fixture">📅 Fixture</button>
       <button class="nav-btn"        data-tab="grupos">📊 Grupos</button>
-      <button class="nav-btn"        data-tab="elim">⚡ Eliminatorias</button>
+      <div class="nav-dropdown" id="elimDropdown">
+        <button class="nav-btn nav-btn-elim" id="elimDropdownBtn">
+          ⚡ Eliminatorias <span class="dropdown-arrow">▾</span>
+        </button>
+        <div class="dropdown-menu" id="elimMenu">
+          <button class="dropdown-item" data-round="r16">16avos de Final</button>
+          <button class="dropdown-item" data-round="oct">Octavos de Final</button>
+          <button class="dropdown-item" data-round="qf">Cuartos de Final</button>
+          <button class="dropdown-item" data-round="sf">Semifinales</button>
+          <button class="dropdown-item" data-round="tercero">3er Puesto</button>
+          <button class="dropdown-item" data-round="final">Final</button>
+        </div>
+      </div>
     </nav>
 
     <!-- Hamburger -->
@@ -50,7 +62,19 @@
   <nav class="nav-drawer" id="navDrawer" aria-label="Menú móvil">
     <button class="drawer-btn active" data-tab="fixture">📅 Fixture</button>
     <button class="drawer-btn"        data-tab="grupos">📊 Grupos</button>
-    <button class="drawer-btn"        data-tab="elim">⚡ Eliminatorias</button>
+    <div class="drawer-section" id="elimDrawerSection">
+      <button class="drawer-btn drawer-btn-parent" id="elimDrawerBtn">
+        ⚡ Eliminatorias <span class="drawer-arrow">▾</span>
+      </button>
+      <div class="drawer-subitems" id="elimSubitems">
+        <button class="drawer-subitem" data-round="r16">16avos de Final</button>
+        <button class="drawer-subitem" data-round="oct">Octavos de Final</button>
+        <button class="drawer-subitem" data-round="qf">Cuartos de Final</button>
+        <button class="drawer-subitem" data-round="sf">Semifinales</button>
+        <button class="drawer-subitem" data-round="tercero">3er Puesto</button>
+        <button class="drawer-subitem" data-round="final">Final</button>
+      </div>
+    </div>
   </nav>
 </header>
 
@@ -99,8 +123,8 @@
   <!-- ELIMINATORIAS -->
   <section id="tab-elim" class="tab-panel" aria-labelledby="elim-title">
     <div class="section-head">
-      <h1 class="section-title" id="elim-title">ELIMINATORIAS</h1>
-      <p class="section-sub">16avos · Octavos · Cuartos · Semis · 3er Puesto · Final</p>
+      <h1 class="section-title" id="elimTitle">ELIMINATORIAS</h1>
+      <p class="section-sub" id="elimSub">16avos · Octavos · Cuartos · Semis · 3er Puesto · Final</p>
     </div>
     <div id="knockoutContainer"></div>
   </section>

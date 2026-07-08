@@ -452,15 +452,18 @@ function renderGrupos() {
 // ============================================================
 // RENDER ELIMINATORIAS (pestaña propia)
 // ============================================================
-function renderEliminatorias() {
-  const res = DATA.resultados.eliminatorias || {};
-  let html  = '';
+function renderEliminatorias(filterRound = null) {
+  const res    = DATA.resultados.eliminatorias || {};
+  let html     = '';
+  const rounds = filterRound
+    ? DATA.eliminatorias.filter(r => r.id === filterRound)
+    : DATA.eliminatorias;
 
-  DATA.eliminatorias.forEach(round => {
+  rounds.forEach(round => {
     const isFinal = round.id === 'final';
     const isWide  = ['sf','tercero'].includes(round.id);
     html += `<div class="ko-section${isFinal?' ko-final':isWide?' ko-wide':''}">
-      <div class="ko-round-title">${round.name}</div>
+      <!-- <div class="ko-round-title">${round.name}</div> -->
       <div class="ko-grid">`;
 
     round.matches.forEach(m => {
@@ -509,34 +512,97 @@ function renderEliminatorias() {
 // ============================================================
 // NAV
 // ============================================================
-function initNav() {
-  const burger = document.getElementById('hamburger');
-  const drawer = document.getElementById('navDrawer');
+const ROUND_NAMES = {
+  'r16':     '16AVOS DE FINAL',
+  'oct':     'OCTAVOS DE FINAL',
+  'qf':      'CUARTOS DE FINAL',
+  'sf':      'SEMIFINALES',
+  'tercero': '3ER PUESTO',
+  'final':   'FINAL'
+};
 
-  burger.addEventListener('click', () => {
+function initNav() {
+  const burger         = document.getElementById('hamburger');
+  const drawer         = document.getElementById('navDrawer');
+  const elimDrop       = document.getElementById('elimDropdown');
+  const elimBtn        = document.getElementById('elimDropdownBtn');
+  const elimDrawerBtn  = document.getElementById('elimDrawerBtn');
+  const elimDrawerSect = document.getElementById('elimDrawerSection');
+
+  // ── Hamburger ──
+  burger.addEventListener('click', e => {
+    e.stopPropagation();
     burger.classList.toggle('open');
     drawer.classList.toggle('open');
   });
+
+  // ── Cerrar dropdown al click afuera ──
   document.addEventListener('click', e => {
     if (!burger.contains(e.target) && !drawer.contains(e.target)) {
       burger.classList.remove('open');
       drawer.classList.remove('open');
     }
+    if (!elimDrop.contains(e.target)) {
+      elimDrop.classList.remove('open');
+    }
   });
 
-  function activate(tabId) {
-    document.querySelectorAll('.nav-btn,.drawer-btn').forEach(b =>
-      b.classList.toggle('active', b.dataset.tab === tabId));
+  // ── Dropdown desktop ──
+  elimBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    elimDrop.classList.toggle('open');
+  });
+
+  // ── Drawer mobile — expandir/colapsar subitems ──
+  elimDrawerBtn.addEventListener('click', () => {
+    elimDrawerSect.classList.toggle('open');
+  });
+
+  // ── Activar tab Fixture o Grupos ──
+  function activateTab(tabId) {
+    document.querySelectorAll('.nav-btn:not(.nav-btn-elim), .drawer-btn:not(.drawer-btn-parent)')
+      .forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
     document.querySelectorAll('.tab-panel').forEach(p =>
       p.classList.toggle('active', p.id === 'tab-' + tabId));
+    // Limpiar activos de elim
+    elimBtn.classList.remove('active');
+    document.querySelectorAll('.dropdown-item, .drawer-subitem').forEach(b => b.classList.remove('active'));
     if (tabId === 'grupos') renderGrupos();
-    if (tabId === 'elim')   renderEliminatorias();
     burger.classList.remove('open');
     drawer.classList.remove('open');
   }
 
-  document.querySelectorAll('.nav-btn,.drawer-btn').forEach(btn =>
-    btn.addEventListener('click', () => activate(btn.dataset.tab)));
+  document.querySelectorAll('.nav-btn:not(.nav-btn-elim), .drawer-btn:not(.drawer-btn-parent)').forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  });
+
+  // ── Activar fase de eliminatorias ──
+  function activateRound(roundId) {
+    // Mostrar panel elim
+    document.querySelectorAll('.nav-btn:not(.nav-btn-elim), .drawer-btn:not(.drawer-btn-parent)')
+      .forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p =>
+      p.classList.toggle('active', p.id === 'tab-elim'));
+    // Marcar activos
+    elimBtn.classList.add('active');
+    document.querySelectorAll('.dropdown-item').forEach(b =>
+      b.classList.toggle('active', b.dataset.round === roundId));
+    document.querySelectorAll('.drawer-subitem').forEach(b =>
+      b.classList.toggle('active', b.dataset.round === roundId));
+    // Título dinámico
+    document.getElementById('elimTitle').textContent = ROUND_NAMES[roundId] || 'ELIMINATORIAS';
+    document.getElementById('elimSub').textContent   = '';
+    // Renderizar solo esa ronda
+    renderEliminatorias(roundId);
+    // Cerrar menus
+    elimDrop.classList.remove('open');
+    burger.classList.remove('open');
+    drawer.classList.remove('open');
+  }
+
+  document.querySelectorAll('.dropdown-item, .drawer-subitem').forEach(btn => {
+    btn.addEventListener('click', () => activateRound(btn.dataset.round));
+  });
 }
 
 // ============================================================
