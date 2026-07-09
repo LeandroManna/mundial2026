@@ -395,6 +395,10 @@
       "scoreA": 0,
       "penH": 4,
       "penA": 3
+    },
+    "k97": {
+      "scoreH": 2,
+      "scoreA": 0
     }
   },
   "terceros": {
@@ -503,6 +507,10 @@
     "k96": {
       "home": "Suiza",
       "away": "Colombia"
+    },
+    "k97": {
+      "home": "Francia",
+      "away": "Marruecos"
     }
   }
 }
