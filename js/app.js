@@ -664,6 +664,35 @@ function renderBracket() {
 }
 
 // ============================================================
+// FASE ACTUAL DEL TORNEO
+// ============================================================
+
+function getCurrentRound() {
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  // Buscar una fase cuya fecha incluya el día de hoy
+  for (const round of DATA.eliminatorias) {
+
+    const dates = round.matches
+      .map(m => m.date)
+      .filter(Boolean)
+      .sort();
+
+    if (!dates.length) continue;
+
+    const from = new Date(dates[0] + "T00:00:00");
+    const to   = new Date(dates[dates.length-1] + "T23:59:59");
+
+    if (today >= from && today <= to)
+      return round.id;
+  }
+
+  return null;
+}
+
+// ============================================================
 // NAV
 // ============================================================
 const ROUND_NAMES = {
@@ -732,7 +761,7 @@ function initNav() {
   });
 
   // ── Activar fase de eliminatorias ──
-  function activateRound(roundId) {
+  window.activateRound = function(roundId) {
     // Desactivar tabs normales
     document.querySelectorAll('.nav-btn:not(.nav-btn-elim), .drawer-btn:not(.drawer-btn-parent)')
       .forEach(b => b.classList.remove('active'));
@@ -771,9 +800,27 @@ function initNav() {
 // INIT
 // ============================================================
 document.addEventListener('DOMContentLoaded', async () => {
-  try { await loadData(); }
-  catch (e) { console.error('Error cargando datos:', e); }
+
+  try {
+    await loadData();
+  }
+  catch (e) {
+    console.error('Error cargando datos:', e);
+  }
+
   buildFiltros();
   applyFiltros();
   initNav();
+
+  const currentRound = getCurrentRound();
+
+  if (currentRound) {
+
+    // Esperar que termine de renderizar la interfaz
+    requestAnimationFrame(() => {
+      window.activateRound(currentRound);
+    });
+
+  }
+
 });
