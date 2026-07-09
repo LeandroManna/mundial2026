@@ -39,6 +39,7 @@
           ⚡ Eliminatorias <span class="dropdown-arrow">▾</span>
         </button>
         <div class="dropdown-menu" id="elimMenu">
+          <button class="dropdown-item" data-round="bracket">🏆 Ver Llaves</button>
           <button class="dropdown-item" data-round="r16">16avos de Final</button>
           <button class="dropdown-item" data-round="oct">Octavos de Final</button>
           <button class="dropdown-item" data-round="qf">Cuartos de Final</button>
@@ -67,6 +68,7 @@
         ⚡ Eliminatorias <span class="drawer-arrow">▾</span>
       </button>
       <div class="drawer-subitems" id="elimSubitems">
+        <button class="drawer-subitem" data-round="bracket">🏆 Ver Llaves</button>
         <button class="drawer-subitem" data-round="r16">16avos de Final</button>
         <button class="drawer-subitem" data-round="oct">Octavos de Final</button>
         <button class="drawer-subitem" data-round="qf">Cuartos de Final</button>
@@ -118,6 +120,18 @@
       </div>
     </div>
     <div class="grupos-grid" id="gruposContainer"></div>
+  </section>
+
+  <!-- LLAVES -->
+  <section id="tab-bracket" class="tab-panel">
+    <div class="section-head">
+      <h1 class="section-title">LLAVES</h1>
+      <p class="section-sub">Llave completa · 16avos → Final</p>
+    </div>
+    <div class="bracket-hint">📱 Deslizá horizontalmente para ver las llaves completas</div>
+    <div class="bracket-scroll-wrap">
+      <div class="bracket-wrap" id="bracketContainer"></div>
+    </div>
   </section>
 
   <!-- ELIMINATORIAS -->

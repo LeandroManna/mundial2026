@@ -847,3 +847,210 @@ button { font-family: var(--font-body); cursor: pointer; }
 }
 .drawer-subitem:hover { color: var(--red); background: var(--red-light); }
 .drawer-subitem.active { background: var(--red); color: #fff; font-weight: 700; }
+
+/* ============================================================
+   BRACKET / LLAVE
+   ============================================================ */
+.bracket-hint {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 12px;
+  display: none;
+}
+@media (max-width: 900px) { .bracket-hint { display: block; } }
+
+.bracket-scroll-wrap {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 16px;
+}
+
+.bracket-wrap {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  min-width: 900px;
+  padding: 16px 8px;
+}
+
+/* Columna de ronda */
+.br-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+  max-width: 170px;
+}
+.br-col-final {
+  min-width: 160px;
+  max-width: 180px;
+  flex: 1.1;
+}
+
+.br-col-title {
+  font-family: var(--font-disp);
+  font-size: .8rem;
+  color: var(--red);
+  letter-spacing: 1.5px;
+  text-align: center;
+  padding: 0 4px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Grupo de partidos en una columna — espacio vertical proporcional */
+.br-matches {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+}
+
+/* Tarjeta de partido en el bracket */
+.br-match {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 4px;
+  position: relative;
+}
+
+/* Conector horizontal entre rondas */
+.br-match::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: var(--border2);
+}
+.br-col:last-child .br-match::after { display: none; }
+
+.br-team {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text2);
+  min-height: 28px;
+  transition: all .15s;
+  overflow: hidden;
+}
+.br-team:first-child {
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+.br-team:last-child {
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+.br-team.known { color: var(--text); }
+.br-team.winner {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  font-weight: 700;
+}
+.br-team.argentina-team { color: var(--arg); }
+.br-team.argentina-team.winner { background: var(--arg); border-color: var(--arg); color: #fff; }
+
+.br-team img.team-flag {
+  width: 18px;
+  height: 13px;
+  object-fit: cover;
+  border-radius: 1px;
+  flex-shrink: 0;
+  border: none;
+}
+.br-team .flag-emoji { font-size: .85em; }
+
+.br-team-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.br-score {
+  font-family: var(--font-disp);
+  font-size: .95rem;
+  color: var(--muted);
+  min-width: 14px;
+  text-align: right;
+  flex-shrink: 0;
+}
+.br-score.winner-score { color: #fff; }
+.br-score.known-score  { color: var(--text); }
+
+/* Separador entre los dos equipos del partido */
+.br-match-sep {
+  height: 1px;
+  background: var(--border);
+  margin: 0 4px;
+  display: none; /* ya está incluido en los bordes */
+}
+
+/* Connector vertical entre partidos de la misma ronda */
+.br-connector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16px;
+}
+
+/* Trofeo final */
+.br-trophy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 6px;
+}
+.br-trophy-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.br-trophy-label {
+  font-family: var(--font-disp);
+  font-size: .9rem;
+  color: var(--red);
+  letter-spacing: 2px;
+}
+.br-winner-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+/* 3er puesto — debajo del bracket */
+.br-tercero {
+  margin-top: 16px;
+  padding: 10px 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text2);
+  box-shadow: var(--shadow-sm);
+  max-width: 400px;
+}
+.br-tercero-label {
+  font-family: var(--font-disp);
+  font-size: .85rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}

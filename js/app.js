@@ -463,7 +463,7 @@ function renderEliminatorias(filterRound = null) {
     const isFinal = round.id === 'final';
     const isWide  = ['sf','tercero'].includes(round.id);
     html += `<div class="ko-section${isFinal?' ko-final':isWide?' ko-wide':''}">
-      <!-- <div class="ko-round-title">${round.name}</div> -->
+      <div class="ko-round-title">${round.name}</div>
       <div class="ko-grid">`;
 
     round.matches.forEach(m => {
@@ -509,10 +509,165 @@ function renderEliminatorias(filterRound = null) {
   document.getElementById('knockoutContainer').innerHTML = html;
 }
 
+
+// ============================================================
+// RENDER BRACKET
+// ============================================================
+function renderBracket() {
+  const res = DATA.resultados.eliminatorias || {};
+
+  // Altura fija por partido en px — base para calcular posiciones
+  const MATCH_H  = 64;  // altura de una tarjeta (2 equipos)
+  const GAP      = 8;   // gap entre tarjetas dentro de una columna
+
+  // Partidos por columna, en orden de arriba a abajo
+  const COLS = [
+    { title:'16AVOS',  ids:['k74','k77','k73','k75','k83','k84','k81','k82'] },
+    { title:'OCTAVOS', ids:['k89','k90','k93','k94'] },
+    { title:'CUARTOS', ids:['k97','k98'] },
+    { title:'SEMIS',   ids:['k101'] },
+    { title:'FINAL',   ids:['k104'] },
+    { title:'SEMIS',   ids:['k102'] },
+    { title:'CUARTOS', ids:['k99','k100'] },
+    { title:'OCTAVOS', ids:['k91','k92','k95','k96'] },
+    { title:'16AVOS',  ids:['k76','k78','k79','k80','k86','k88','k85','k87'] },
+  ];
+
+  // Total de slots en la columna base (16avos = 8 partidos)
+  const BASE_COUNT = 10;
+
+  function getMatch(id) {
+    for (const r of DATA.eliminatorias)
+      for (const m of r.matches)
+        if (m.id === id) return m;
+    return null;
+  }
+
+  function getWinner(id) {
+    const sc = res[id];
+    if (!sc || sc.scoreH == null) return null;
+    const m = getMatch(id);
+    if (!m) return null;
+    const h = resolveSlot(m.homeSlot);
+    const a = resolveSlot(m.awaySlot);
+    if (+sc.scoreH > +sc.scoreA) return h.known ? h.team : null;
+    if (+sc.scoreA > +sc.scoreH) return a.known ? a.team : null;
+    if (sc.penH != null && sc.penA != null)
+      return +sc.penH > +sc.penA ? (h.known ? h.team : null) : (a.known ? a.team : null);
+    return null;
+  }
+
+  function brTeamHtml(matchId, isHome) {
+    const m = getMatch(matchId);
+    if (!m) return `<div class="br-team"><span class="br-team-name" style="color:var(--muted)">-</span></div>`;
+    const slot   = isHome ? m.homeSlot : m.awaySlot;
+    const s      = resolveSlot(slot);
+    const sc     = res[matchId];
+    const played = sc && sc.scoreH != null;
+    const winner = played ? getWinner(matchId) : null;
+    const isWin  = winner && winner === s.team;
+    const isArg  = s.team === 'Argentina';
+    const score  = played ? (isHome ? sc.scoreH : sc.scoreA) : '';
+    const penStr = played && sc.penH != null
+      ? (isHome ? sc.penH : sc.penA) : null;
+
+    const cls = ['br-team',
+      s.known  ? 'known' : '',
+      isWin    ? 'winner' : '',
+      isArg    ? 'argentina-team' : '',
+    ].filter(Boolean).join(' ');
+
+    const scCls = isWin ? 'br-score winner-score' : played ? 'br-score known-score' : 'br-score';
+    const flag  = s.known ? flagImg(s.team, 'team-flag') : '';
+    const nameHtml = s.known
+      ? `<span class="br-team-name">${s.team}</span>`
+      : `<span class="br-team-name" style="color:var(--muted);font-weight:400;font-size:10px">${s.team}</span>`;
+    const scoreHtml = played
+      ? `<span class="${scCls}">${score}${penStr != null ? `<sup style="font-size:8px">(${penStr})</sup>` : ''}</span>`
+      : '';
+
+    return `<div class="${cls}">${flag}${nameHtml}${scoreHtml}</div>`;
+  }
+
+  function brMatchHtml(id) {
+    return `<div class="br-match">${brTeamHtml(id,true)}${brTeamHtml(id,false)}</div>`;
+  }
+
+  // Altura total disponible = 8 partidos × (MATCH_H + GAP) - GAP
+  const totalH = BASE_COUNT * (MATCH_H + GAP) - GAP;
+
+  function buildCol(colDef, colIdx) {
+    const { title, ids } = colDef;
+    const count  = ids.length;
+    // Cada slot ocupa proporcionalmente el espacio de BASE_COUNT/count partidos base
+    const slotH  = totalH / count;
+
+    const isFinal = title === 'FINAL' && count === 1;
+
+    let matchesHtml = '';
+    ids.forEach((id, i) => {
+      // Centro del slot en px
+      const centerY = i * slotH + slotH / 2;
+      // Posición top del partido (centrado en el slot)
+      const topY    = centerY - MATCH_H / 2;
+
+      if (isFinal) {
+        // Trofeo centrado
+        const winner = getWinner(id);
+        matchesHtml += `
+          <div style="position:absolute;top:${topY - 24}px;left:0;right:0;text-align:center">
+            <div style="font-size:1.6rem;line-height:1">🏆</div>
+          </div>
+          <div style="position:absolute;top:${topY + 8}px;left:4px;right:4px">
+            ${brMatchHtml(id)}
+            ${winner ? `<div style="text-align:center;font-size:10px;color:var(--muted);letter-spacing:1px;margin-top:4px;font-weight:700">CAMPEÓN: ${winner}</div>` : ''}
+          </div>`;
+      } else {
+        matchesHtml += `
+          <div style="position:absolute;top:${topY}px;left:4px;right:4px">
+            ${brMatchHtml(id)}
+          </div>`;
+      }
+    });
+
+    return `<div class="br-col" style="position:relative;height:${totalH}px;min-width:155px;max-width:170px;flex:1">
+      <div class="br-col-title">${title}</div>
+      ${matchesHtml}
+    </div>`;
+  }
+
+  // Construir todas las columnas
+  const colsHtml = COLS.map((col, i) => buildCol(col, i)).join('');
+
+  // 3er puesto
+  const t3id    = 'k103';
+  const t3match = getMatch(t3id);
+  const t3sc    = res[t3id];
+  const t3h     = t3match ? resolveSlot(t3match.homeSlot) : {team:'?',known:false};
+  const t3a     = t3match ? resolveSlot(t3match.awaySlot) : {team:'?',known:false};
+  const terceroHtml = `<div class="br-tercero">
+    <span class="br-tercero-label">3ER PUESTO</span>
+    ${t3h.known ? flagImg(t3h.team) : ''}<span>${t3h.team}</span>
+    ${t3sc && t3sc.scoreH != null
+      ? `<strong>${t3sc.scoreH} – ${t3sc.scoreA}</strong>`
+      : '<span style="color:var(--muted)">vs</span>'}
+    <span>${t3a.team}</span>${t3a.known ? flagImg(t3a.team) : ''}
+  </div>`;
+
+  document.getElementById('bracketContainer').innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="bracket-wrap" style="align-items:flex-start">
+        ${colsHtml}
+      </div>
+      ${terceroHtml}
+    </div>`;
+}
+
 // ============================================================
 // NAV
 // ============================================================
 const ROUND_NAMES = {
+  'bracket': 'BRACKET',
   'r16':     '16AVOS DE FINAL',
   'oct':     'OCTAVOS DE FINAL',
   'qf':      'CUARTOS DE FINAL',
@@ -578,22 +733,29 @@ function initNav() {
 
   // ── Activar fase de eliminatorias ──
   function activateRound(roundId) {
-    // Mostrar panel elim
+    // Desactivar tabs normales
     document.querySelectorAll('.nav-btn:not(.nav-btn-elim), .drawer-btn:not(.drawer-btn-parent)')
       .forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p =>
-      p.classList.toggle('active', p.id === 'tab-elim'));
-    // Marcar activos
+    // Marcar activos en dropdown
     elimBtn.classList.add('active');
     document.querySelectorAll('.dropdown-item').forEach(b =>
       b.classList.toggle('active', b.dataset.round === roundId));
     document.querySelectorAll('.drawer-subitem').forEach(b =>
       b.classList.toggle('active', b.dataset.round === roundId));
-    // Título dinámico
-    document.getElementById('elimTitle').textContent = ROUND_NAMES[roundId] || 'ELIMINATORIAS';
-    document.getElementById('elimSub').textContent   = '';
-    // Renderizar solo esa ronda
-    renderEliminatorias(roundId);
+
+    if (roundId === 'bracket') {
+      // Mostrar panel bracket
+      document.querySelectorAll('.tab-panel').forEach(p =>
+        p.classList.toggle('active', p.id === 'tab-bracket'));
+      renderBracket();
+    } else {
+      // Mostrar panel elim con la ronda filtrada
+      document.querySelectorAll('.tab-panel').forEach(p =>
+        p.classList.toggle('active', p.id === 'tab-elim'));
+      document.getElementById('elimTitle').textContent = ROUND_NAMES[roundId] || 'ELIMINATORIAS';
+      document.getElementById('elimSub').textContent   = '';
+      renderEliminatorias(roundId);
+    }
     // Cerrar menus
     elimDrop.classList.remove('open');
     burger.classList.remove('open');
