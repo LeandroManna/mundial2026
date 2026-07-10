@@ -399,6 +399,10 @@
     "k97": {
       "scoreH": 2,
       "scoreA": 0
+    },
+    "k98": {
+      "scoreH": 2,
+      "scoreA": 1
     }
   },
   "terceros": {
@@ -511,6 +515,10 @@
     "k97": {
       "home": "Francia",
       "away": "Marruecos"
+    },
+    "k98": {
+      "home": "España",
+      "away": "Bélgica"
     }
   }
 }
