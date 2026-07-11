@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T15:57:31.370726+00:00",
+  "generatedAt": "2026-07-11T16:08:55.658056+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -106,8 +106,8 @@
       "team": "Senegal",
       "playedMatches": 4,
       "goals": 4,
-      "assists": 0,
-      "goalContributions": 4,
+      "assists": 1,
+      "goalContributions": 5,
       "penalties": 0
     }
   ],
