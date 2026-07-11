@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T22:25:29.332553+00:00",
+  "generatedAt": "2026-07-11T23:28:29.680257+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -55,9 +55,9 @@
       "player": "Jude Bellingham",
       "team": "Inglaterra",
       "playedMatches": 6,
-      "goals": 5,
+      "goals": 6,
       "assists": 1,
-      "goalContributions": 6,
+      "goalContributions": 7,
       "penalties": 0
     },
     {
