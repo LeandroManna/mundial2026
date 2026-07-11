@@ -34,6 +34,7 @@
     <nav class="nav-desktop" aria-label="Navegación principal">
       <button class="nav-btn active" data-tab="fixture">📅 Fixture</button>
       <button class="nav-btn"        data-tab="grupos">📊 Grupos</button>
+      <button class="nav-btn"        data-tab="stats">📈 Estadísticas</button>
       <div class="nav-dropdown" id="elimDropdown">
         <button class="nav-btn nav-btn-elim" id="elimDropdownBtn">
           ⚡ Eliminatorias <span class="dropdown-arrow">▾</span>
@@ -63,6 +64,7 @@
   <nav class="nav-drawer" id="navDrawer" aria-label="Menú móvil">
     <button class="drawer-btn active" data-tab="fixture">📅 Fixture</button>
     <button class="drawer-btn"        data-tab="grupos">📊 Grupos</button>
+    <button class="drawer-btn"        data-tab="stats">📈 Estadísticas</button>
     <div class="drawer-section" id="elimDrawerSection">
       <button class="drawer-btn drawer-btn-parent" id="elimDrawerBtn">
         ⚡ Eliminatorias <span class="drawer-arrow">▾</span>
@@ -120,6 +122,15 @@
       </div>
     </div>
     <div class="grupos-grid" id="gruposContainer"></div>
+  </section>
+
+  <!-- ESTADISTICAS -->
+  <section id="tab-stats" class="tab-panel" aria-labelledby="stats-title">
+    <div class="section-head">
+      <h1 class="section-title" id="stats-title">ESTADÍSTICAS</h1>
+      <p class="section-sub">Goleadores · Ranking general · Datos desde football-data.org</p>
+    </div>
+    <div id="statsContainer"></div>
   </section>
 
   <!-- LLAVES -->

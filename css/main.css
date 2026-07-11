@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    MUNDIAL 2026 — main.css · Tema claro · Identidad El Cuatro
    ============================================================ */
 
@@ -641,6 +641,102 @@ button { font-family: var(--font-body); cursor: pointer; }
 .ko-pen-row strong { color: var(--red); font-size: 12px; }
 
 /* ============================================================
+   ESTADISTICAS
+   ============================================================ */
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.stats-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+.stats-card.accent {
+  border-left: 4px solid var(--red);
+  box-shadow: var(--shadow);
+}
+.stats-card-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.stats-card-value {
+  font-family: var(--font-disp);
+  font-size: 1.45rem;
+  color: var(--red);
+  letter-spacing: 1.5px;
+  line-height: 1.05;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.stats-card-sub {
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stats-layout {
+  display: grid;
+  grid-template-columns: minmax(330px, .85fr) minmax(520px, 1.35fr);
+  gap: 16px;
+  align-items: start;
+}
+.stats-panel { min-width: 0; }
+.stats-ranking-panel { overflow: hidden; }
+.stats-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.stats-table { min-width: 100%; }
+.stats-ranking-panel .stats-table { min-width: 720px; }
+.stats-table th:first-child,
+.stats-table td:first-child {
+  width: 34px;
+}
+.stats-player-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.stats-player {
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.stats-team-mini {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.stats-team-mini .team-flag {
+  width: 18px;
+  height: 13px;
+  box-shadow: none;
+}
+
+/* ============================================================
    LEGEND
    ============================================================ */
 .legend {
@@ -711,6 +807,9 @@ button { font-family: var(--font-body); cursor: pointer; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
+  .stats-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats-layout { grid-template-columns: 1fr; }
+
   .match-card {
     grid-template-columns: 60px 1fr auto 1fr;
     grid-template-rows: auto auto;
@@ -743,6 +842,8 @@ button { font-family: var(--font-body); cursor: pointer; }
   .site-title { font-size: 1.3rem; letter-spacing: 2px; }
   .grupos-grid { grid-template-columns: 1fr; }
   .ko-grid { grid-template-columns: 1fr; }
+  .stats-summary { grid-template-columns: 1fr; }
+  .stats-card-value { font-size: 1.25rem; }
 }
 
 @media (max-width: 400px) {
@@ -1054,3 +1155,4 @@ button { font-family: var(--font-body); cursor: pointer; }
   letter-spacing: 1px;
   white-space: nowrap;
 }
+

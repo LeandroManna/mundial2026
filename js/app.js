@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    MUNDIAL 2026 — app.js
    ============================================================ */
 'use strict';
@@ -19,6 +19,23 @@ const FLAG_EMOJI = {
   'Inglaterra':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Croacia':'🇭🇷','Ghana':'🇬🇭','Panamá':'🇵🇦',
 };
 
+const TEAM_ALIASES = {
+  'Mexico':'México','South Africa':'Sudáfrica','Korea Republic':'Corea del Sur','South Korea':'Corea del Sur',
+  'Czechia':'Rep. Checa','Czech Republic':'Rep. Checa','Canada':'Canadá','Bosnia and Herzegovina':'Bosnia y Herz.',
+  'Bosnia-Herzegovina':'Bosnia y Herz.','Switzerland':'Suiza','Brazil':'Brasil','Morocco':'Marruecos',
+  'Haiti':'Haití','Scotland':'Escocia','United States':'Estados Unidos','Turkey':'Turquía','Türkiye':'Turquía',
+  'Germany':'Alemania','Curaçao':'Curazao','Ivory Coast':'Costa de Marfil','Netherlands':'Países Bajos',
+  'Japan':'Japón','Sweden':'Suecia','Tunisia':'Túnez','Spain':'España','Cape Verde Islands':'Cabo Verde',
+  'Cape Verde':'Cabo Verde','Saudi Arabia':'Arabia Saudita','Iran':'Irán','New Zealand':'Nueva Zelanda',
+  'Belgium':'Bélgica','Egypt':'Egipto','France':'Francia','Iraq':'Irak','Norway':'Noruega',
+  'Algeria':'Argelia','Jordan':'Jordania','DR Congo':'RD Congo','Congo DR':'RD Congo',
+  'Uzbekistan':'Uzbekistán','England':'Inglaterra','Croatia':'Croacia','Panama':'Panamá'
+};
+
+function normalizeTeamName(name) {
+  return TEAM_ALIASES[name] || name;
+}
+
 function nameToSlug(name) {
   return name.toLowerCase()
     .replace(/\s+/g,'-').replace(/\./g,'')
@@ -27,6 +44,7 @@ function nameToSlug(name) {
 }
 
 function flagImg(team, cls='team-flag') {
+  team = normalizeTeamName(team);
   if (!team || team.startsWith('1º') || team.startsWith('2º') ||
       team.startsWith('3º') || team.startsWith('G.') ||
       team.startsWith('Perd.') || team.startsWith('?')) return '';
@@ -45,24 +63,38 @@ function fmtDate(iso) {
   return `${DIAS[d.getDay()]} ${d.getDate()} ${MESES[d.getMonth()]}`;
 }
 
+function escHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, ch => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[ch]));
+}
+
 // ── STATE ────────────────────────────────────────────────────
-const DATA = { partidos:[], grupos:{}, eliminatorias:[], resultados:{ partidos:{}, eliminatorias:{}, terceros:{} } };
+const DATA = {
+  partidos:[],
+  grupos:{},
+  eliminatorias:[],
+  resultados:{ partidos:{}, eliminatorias:{}, terceros:{} },
+  stats:{ scorers:[], teamRanking:[], competition:{} }
+};
 
 // Filtros activos
 const FILTROS = { fecha: 'all', grupo: 'all', equipo: 'all', fase: 'grupos' };
 
 // ── LOAD ─────────────────────────────────────────────────────
 async function loadData() {
-  const [partidos, grupos, eliminatorias, resultados] = await Promise.all([
+  const [partidos, grupos, eliminatorias, resultados, stats] = await Promise.all([
     fetch('json/partidos.json').then(r => r.json()),
     fetch('json/grupos.json').then(r => r.json()),
     fetch('json/eliminatorias.json').then(r => r.json()),
     fetch('json/resultados.json').then(r => r.json()).catch(() => ({ partidos:{}, eliminatorias:{}, terceros:{} })),
+    fetch('json/stats.json').then(r => r.json()).catch(() => ({ scorers:[], teamRanking:[], competition:{} })),
   ]);
   DATA.partidos      = partidos;
   DATA.grupos        = grupos;
   DATA.eliminatorias = eliminatorias;
   DATA.resultados    = { partidos:{}, eliminatorias:{}, terceros:{}, ...resultados };
+  DATA.stats         = { scorers:[], teamRanking:[], competition:{}, ...stats };
 }
 
 // ============================================================
@@ -450,6 +482,109 @@ function renderGrupos() {
 }
 
 // ============================================================
+// RENDER ESTADISTICAS
+// ============================================================
+function renderStats() {
+  const container = document.getElementById('statsContainer');
+  if (!container) return;
+
+  const stats = DATA.stats || {};
+  const scorers = stats.scorers || [];
+  const ranking = stats.teamRanking || [];
+  const competition = stats.competition || {};
+
+  if (!scorers.length && !ranking.length) {
+    container.innerHTML = '<div class="empty-state">Todavía no hay estadísticas disponibles.</div>';
+    return;
+  }
+
+  const leader = scorers[0];
+  const bestTeam = ranking[0];
+
+  const summaryCards = `
+    <div class="stats-summary">
+      <div class="stats-card accent">
+        <div class="stats-card-label">Goleador</div>
+        <div class="stats-card-value">${leader ? escHtml(leader.player) : '-'}</div>
+        <div class="stats-card-sub">${leader ? `${escHtml(normalizeTeamName(leader.team))} · ${leader.goals} goles` : 'Sin datos'}</div>
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-label">Mejor ranking</div>
+        <div class="stats-card-value">${bestTeam ? escHtml(normalizeTeamName(bestTeam.team)) : '-'}</div>
+        <div class="stats-card-sub">${bestTeam ? `${Number(bestTeam.win_pct).toFixed(1)}% rendimiento · Dif ${bestTeam.dg > 0 ? '+' : ''}${bestTeam.dg}` : 'Sin datos'}</div>
+      </div>
+      <div class="stats-card">
+        <div class="stats-card-label">Competencia</div>
+        <div class="stats-card-value">${escHtml(competition.name || 'FIFA World Cup')}</div>
+        <div class="stats-card-sub">${escHtml(competition.startDate || '?')} · ${escHtml(competition.endDate || '?')} · MD ${escHtml(competition.currentMatchday || '-')}</div>
+      </div>
+
+    </div>`;
+
+  const scorersRows = scorers.map(s => {
+    const team = normalizeTeamName(s.team);
+    const goalContributions = Number(s.goalContributions ?? ((s.goals || 0) + (s.assists || 0)));
+    return `<tr class="${team === 'Argentina' ? 'cl-arg' : ''}">
+      <td class="pos-num">${s.rank}</td>
+      <td>
+        <div class="stats-player-cell">
+          <span class="stats-player">${escHtml(s.player)}</span>
+          <div class="stats-team-mini">${flagImg(team)}${escHtml(team)}</div>
+        </div>
+      </td>
+      <td class="pts-cell">${s.goals}</td>
+      <td>${s.assists}</td>
+      <td class="pts-cell">${goalContributions}</td>
+      <td>${s.penalties}</td>
+      <td>${s.playedMatches}</td>
+    </tr>`;
+  }).join('');
+
+  const rankingRows = ranking.map(t => {
+    const team = normalizeTeamName(t.team);
+    const dif = Number(t.dg || 0);
+    return `<tr class="${team === 'Argentina' ? 'cl-arg' : ''}">
+      <td class="pos-num">${t.rank}</td>
+      <td><div class="team-cell">${flagImg(team)}<span>${escHtml(team)}</span></div></td>
+      <td class="pts-cell">${Number(t.win_pct || 0).toFixed(1)}%</td>
+      <td class="${dif > 0 ? 'dif-pos' : dif < 0 ? 'dif-neg' : ''}">${dif > 0 ? '+' : ''}${dif}</td>
+      <td>${Number(t.avg_gf || 0).toFixed(1)}</td>
+      <td>${t.pj}</td>
+      <td>${t.pg}</td>
+      <td>${t.pe}</td>
+      <td>${t.pp}</td>
+      <td>${t.gf}</td>
+      <td>${t.gc}</td>
+    </tr>`;
+  }).join('');
+
+  container.innerHTML = `
+    ${summaryCards}
+    <div class="stats-layout">
+      <div class="grupo-card stats-panel">
+        <div class="grupo-header"><span class="grupo-name">GOLEADORES</span></div>
+        <table class="grupo-table stats-table">
+          <thead><tr>
+            <th>#</th><th>Jugador</th><th>G</th><th>A</th><th>G+A</th><th>Pen</th><th>PJ</th>
+          </tr></thead>
+          <tbody>${scorersRows}</tbody>
+        </table>
+      </div>
+      <div class="grupo-card stats-panel stats-ranking-panel">
+        <div class="grupo-header"><span class="grupo-name">RANKING GENERAL</span></div>
+        <div class="stats-table-scroll">
+          <table class="grupo-table stats-table">
+            <thead><tr>
+              <th>#</th><th>Equipo</th><th>Rend</th><th>Dif</th><th>GF/P</th><th>PJ</th><th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th>
+            </tr></thead>
+            <tbody>${rankingRows}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ============================================================
 // RENDER ELIMINATORIAS (pestaña propia)
 // ============================================================
 function renderEliminatorias(filterRound = null) {
@@ -752,6 +887,7 @@ function initNav() {
     elimBtn.classList.remove('active');
     document.querySelectorAll('.dropdown-item, .drawer-subitem').forEach(b => b.classList.remove('active'));
     if (tabId === 'grupos') renderGrupos();
+    if (tabId === 'stats') renderStats();
     burger.classList.remove('open');
     drawer.classList.remove('open');
   }
@@ -824,3 +960,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
 });
+

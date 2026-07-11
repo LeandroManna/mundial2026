@@ -1,72 +1,167 @@
-# ⚽ Mundial 2026 — Fixture & Resultados
+# Mundial 2026 - Fixture, resultados y posiciones
 
-Sitio estático para seguir el Mundial 2026 (USA · Canadá · México).
+Sitio web estático para seguir el Mundial 2026 desde Argentina. Muestra el fixture completo, resultados cargados, tablas de posiciones por grupo, rondas eliminatorias y una llave visual desde 16avos hasta la final.
 
----
+El proyecto está hecho con HTML, CSS y JavaScript puro. No requiere build, servidor backend ni dependencias de npm: la aplicación lee archivos JSON locales y renderiza toda la interfaz en el navegador.
 
-## Estructura
+## Qué incluye
 
-```
-mundial2026/
-├── index.html          ← Entry point
+- Fixture de fase de grupos con 72 partidos, fechas, horarios de Argentina, sedes, ciudades y señales de TV.
+- Filtros por fase, fecha, grupo y selección.
+- Tablas de posiciones calculadas automáticamente a partir de `json/resultados.json`.
+- Vista de eliminatorias con 32 partidos, desde 16avos de final hasta final y tercer puesto.
+- Llave visual del cuadro eliminatorio, con ganadores resueltos según resultados y penales.
+- Pestaña de estadísticas con goleadores, ranking general de selecciones e info de competencia.
+- Resaltado especial para Argentina y para equipos clasificados.
+- Banderas en PNG para cada selección, con fallback por emoji cuando falta una imagen.
+- Panel `admin.html` para cargar resultados manualmente y descargar un nuevo `resultados.json`.
+- Scripts y workflows para actualizar resultados desde football-data.org.
+
+## Estructura del proyecto
+
+```text
+.
+├── index.html
+├── admin.html
 ├── css/
 │   └── main.css
 ├── js/
 │   └── app.js
 ├── json/
-│   ├── partidos.json       ← Fixture fase de grupos (no editar salvo corrección)
-│   ├── grupos.json         ← Composición de cada grupo (no editar)
-│   ├── eliminatorias.json  ← Fixture de rondas eliminatorias (no editar)
-│   └── resultados.json     ← ✏️ ESTE es el que editás para cargar resultados
-└── img/
-    ├── logo.png
-    ├── favicon-32.png
-    ├── favicon-16.png
-    ├── apple-touch-icon.png
-    └── flags/
-        ├── argentina.png
-        ├── brasil.png
-        └── ...             ← Una imagen por selección (28×20 px, PNG)
+│   ├── grupos.json
+│   ├── partidos.json
+│   ├── eliminatorias.json
+│   ├── resultados.json
+│   └── stats.json
+├── img/
+│   ├── logo.png
+│   ├── favicon-*.png
+│   └── flags/
+├── scripts/
+│   ├── fetch_resultados.py
+│   ├── fetch_eliminatorias.py
+│   └── fetch_stats.py
+├── .github/
+│   └── workflows/
+│       ├── auto-resultados.yml
+│       ├── auto-eliminatorias.yml
+│       └── auto-stats.yml
+└── push.sh
 ```
 
----
+## Archivos principales
 
-## Cómo cargar resultados
+`index.html` es la página pública. Carga `css/main.css` y `js/app.js`, y contiene las secciones de fixture, grupos, llaves y eliminatorias.
 
-Editá el archivo `json/resultados.json` desde tu notebook.  
-El formato es simple:
+`js/app.js` carga los JSON, calcula posiciones, resuelve clasificados, arma los filtros, renderiza los partidos y actualiza dinámicamente las rondas eliminatorias.
+
+`admin.html` es una herramienta local para cargar resultados de fase de grupos, eliminatorias y mejores terceros. Al guardar cambios dentro del panel, se actualiza el estado en memoria y luego se puede descargar un `resultados.json` listo para reemplazar el archivo del proyecto.
+
+`json/resultados.json` es el archivo operativo más importante: contiene los marcadores que alimentan las posiciones, los resultados de eliminatorias, los penales y los mejores terceros.
+
+`json/stats.json` guarda las estadísticas generadas por `scripts/fetch_stats.py`: goleadores, ranking general de selecciones e información de la competencia.
+
+## Datos
+
+- `json/grupos.json`: selecciones por grupo, de A a L.
+- `json/partidos.json`: fixture completo de fase de grupos.
+- `json/eliminatorias.json`: fixture y dependencias de las rondas eliminatorias.
+- `json/resultados.json`: resultados cargados hasta el momento.
+- `json/stats.json`: estadísticas actualizadas desde football-data.org.
+
+El sitio calcula las tablas con estos criterios básicos: puntos, diferencia de gol y goles a favor. Los dos primeros de cada grupo aparecen como clasificados directos. Los mejores terceros de 16avos se cargan manualmente en la sección `terceros` de `resultados.json`.
+
+## Formato de resultados
 
 ```json
 {
   "partidos": {
-    "m19": { "scoreH": 2, "scoreA": 0 },
-    "m41": { "scoreH": 1, "scoreA": 1 }
+    "m19": { "scoreH": 3, "scoreA": 0 }
   },
   "eliminatorias": {
-    "k73": { "scoreH": 3, "scoreA": 1 }
+    "k74": { "scoreH": 1, "scoreA": 1, "penH": 3, "penA": 4 }
+  },
+  "terceros": {
+    "third_74": "Paraguay"
   }
 }
 ```
 
-- La clave es el `id` del partido (ver `partidos.json` y `eliminatorias.json`).
-- `scoreH` = goles del equipo local · `scoreA` = goles del visitante.
-- Si el partido no se jugó, no incluyas la clave o usá `null`.
+- `scoreH`: goles del equipo local.
+- `scoreA`: goles del equipo visitante.
+- `penH`: penales convertidos por el local, solo si hubo definición por penales.
+- `penA`: penales convertidos por el visitante, solo si hubo definición por penales.
+- Si un partido no se jugó, no se incluye su clave.
 
-Después hacés commit y push 
+Los IDs de fase de grupos usan el formato `m1` a `m72`. Los IDs de eliminatorias usan el formato `k73` a `k104`.
 
----
+## Carga manual de resultados
 
-## Banderas (flags)
+1. Abrir `admin.html` en el navegador.
+2. Cargar o borrar resultados desde las pestañas de fase de grupos, eliminatorias o mejores terceros.
+3. Usar el botón para descargar `resultados.json`.
+4. Reemplazar `json/resultados.json` con el archivo descargado.
+5. Hacer commit y push para publicar los cambios.
 
-Colocá imágenes PNG de **28×20 px** (o mayor, se escalan) en `img/flags/`.  
-El nombre del archivo debe ser el nombre del país en minúsculas, sin tildes, sin puntos, con guiones:
+El script `push.sh` automatiza el flujo de `git add`, `commit` y `push` para despliegues donde Netlify publica desde el repositorio.
 
-| País           | Archivo               |
-|----------------|-----------------------|
-| Argentina      | `argentina.png`       |
-| Rep. Checa     | `rep-checa.png`       |
-| Países Bajos   | `paises-bajos.png`    |
-| Bosnia y Herz. | `bosnia-y-herz.png`   |
-| Costa de Marfil| `costa-de-marfil.png` |
+## Actualización automática
 
-Si la imagen no existe, se muestra el emoji de la bandera como fallback.
+El proyecto incluye dos workflows de GitHub Actions:
+
+- `.github/workflows/auto-resultados.yml`: consulta resultados de fase de grupos cada 5 minutos.
+- `.github/workflows/auto-eliminatorias.yml`: consulta resultados de eliminatorias cada 5 minutos.
+
+Ambos workflows ejecutan scripts Python que consumen la API de football-data.org y actualizan `json/resultados.json` cuando encuentran cambios.
+
+Para usarlos hace falta configurar el secreto:
+
+```text
+FOOTBALL_DATA_TOKEN
+```
+
+Los scripts también pueden ejecutarse localmente si esa variable de entorno está disponible:
+
+```bash
+python scripts/fetch_resultados.py
+python scripts/fetch_eliminatorias.py
+python scripts/fetch_stats.py
+```
+
+`fetch_stats.py` reescribe `json/stats.json` cada vez que se ejecuta. La pestaña **Estadísticas** lee ese archivo y muestra los datos en la interfaz pública.
+
+## Cómo correrlo localmente
+
+Como la app usa `fetch()` para leer JSON, conviene abrirla desde un servidor local simple:
+
+```bash
+python -m http.server 8000
+```
+
+Después abrir:
+
+```text
+http://localhost:8000/
+```
+
+El panel de administración queda disponible en:
+
+```text
+http://localhost:8000/admin.html
+```
+
+## Banderas
+
+Las banderas están en `img/flags/`. El nombre del archivo debe coincidir con el slug generado desde el nombre del país: minúsculas, sin tildes, sin puntos y con espacios reemplazados por guiones.
+
+Ejemplos:
+
+| Selección | Archivo |
+| --- | --- |
+| Argentina | `argentina.png` |
+| México | `mexico.png` |
+| Países Bajos | `paises-bajos.png` |
+| Rep. Checa | `rep-checa.png` |
+| Costa de Marfil | `costa-de-marfil.png` |
+
+Si una bandera no existe, la interfaz intenta mostrar un emoji como fallback.

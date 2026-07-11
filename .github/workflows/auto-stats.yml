@@ -1,0 +1,58 @@
+name: Auto-Estadisticas Mundial 2026
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: 'Mensaje de commit personalizado (opcional)'
+        required: false
+        default: ''
+
+jobs:
+  fetch-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Consultar API y actualizar estadisticas
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: python scripts/fetch_stats.py
+
+      - name: Verificar si hubo cambios
+        id: changes
+        run: |
+          git diff --quiet json/stats.json && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit y push si hay cambios
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "${{ github.event.inputs.mensaje }}" ]; then
+            MSG="${{ github.event.inputs.mensaje }}"
+          else
+            MSG="Estadisticas actualizadas $(date -u '+%d/%m %H:%M UTC')"
+          fi
+
+          git add json/stats.json
+          git commit -m "$MSG"
+          git push
+
+      - name: Sin cambios
+        if: steps.changes.outputs.changed == 'false'
+        run: echo "Sin estadisticas nuevas"
