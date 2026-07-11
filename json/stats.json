@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T20:29:34.709733+00:00",
+  "generatedAt": "2026-07-11T21:27:08.883905+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -141,6 +141,20 @@
       "rank": 2
     },
     {
+      "team": "México",
+      "pj": 4,
+      "pg": 4,
+      "pe": 0,
+      "pp": 0,
+      "gf": 8,
+      "gc": 0,
+      "dg": 8,
+      "win_pct": 100.0,
+      "avg_gf": 2.0,
+      "avg_gc": 0.0,
+      "rank": 3
+    },
+    {
       "team": "España",
       "pj": 6,
       "pg": 5,
@@ -152,35 +166,7 @@
       "win_pct": 83.3,
       "avg_gf": 1.83,
       "avg_gc": 0.17,
-      "rank": 3
-    },
-    {
-      "team": "México",
-      "pj": 5,
-      "pg": 4,
-      "pe": 0,
-      "pp": 1,
-      "gf": 10,
-      "gc": 3,
-      "dg": 7,
-      "win_pct": 80.0,
-      "avg_gf": 2.0,
-      "avg_gc": 0.6,
       "rank": 4
-    },
-    {
-      "team": "Inglaterra",
-      "pj": 5,
-      "pg": 4,
-      "pe": 1,
-      "pp": 0,
-      "gf": 11,
-      "gc": 5,
-      "dg": 6,
-      "win_pct": 80.0,
-      "avg_gf": 2.2,
-      "avg_gc": 1.0,
-      "rank": 5
     },
     {
       "team": "Suiza",
@@ -194,7 +180,7 @@
       "win_pct": 80.0,
       "avg_gf": 1.8,
       "avg_gc": 0.6,
-      "rank": 6
+      "rank": 5
     },
     {
       "team": "Noruega",
@@ -208,6 +194,20 @@
       "win_pct": 80.0,
       "avg_gf": 2.4,
       "avg_gc": 1.8,
+      "rank": 6
+    },
+    {
+      "team": "Inglaterra",
+      "pj": 4,
+      "pg": 3,
+      "pe": 1,
+      "pp": 0,
+      "gf": 8,
+      "gc": 3,
+      "dg": 5,
+      "win_pct": 75.0,
+      "avg_gf": 2.0,
+      "avg_gc": 0.75,
       "rank": 7
     },
     {
