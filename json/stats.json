@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T21:27:08.883905+00:00",
+  "generatedAt": "2026-07-11T22:25:29.332553+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -52,6 +52,16 @@
     },
     {
       "rank": 5,
+      "player": "Jude Bellingham",
+      "team": "Inglaterra",
+      "playedMatches": 6,
+      "goals": 5,
+      "assists": 1,
+      "goalContributions": 6,
+      "penalties": 0
+    },
+    {
+      "rank": 6,
       "player": "Ousmane Dembélé",
       "team": "Francia",
       "playedMatches": 6,
@@ -61,7 +71,7 @@
       "penalties": 0
     },
     {
-      "rank": 6,
+      "rank": 7,
       "player": "Julián Quiñones",
       "team": "México",
       "playedMatches": 5,
@@ -71,20 +81,10 @@
       "penalties": 0
     },
     {
-      "rank": 7,
+      "rank": 8,
       "player": "Vinicius Junior",
       "team": "Brasil",
       "playedMatches": 5,
-      "goals": 4,
-      "assists": 1,
-      "goalContributions": 5,
-      "penalties": 0
-    },
-    {
-      "rank": 8,
-      "player": "Jude Bellingham",
-      "team": "Inglaterra",
-      "playedMatches": 6,
       "goals": 4,
       "assists": 1,
       "goalContributions": 5,
