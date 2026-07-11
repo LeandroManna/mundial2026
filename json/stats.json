@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T19:32:21.587197+00:00",
+  "generatedAt": "2026-07-11T20:29:34.709733+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -34,7 +34,7 @@
       "rank": 3,
       "player": "Erling Haaland",
       "team": "Noruega",
-      "playedMatches": 5,
+      "playedMatches": 6,
       "goals": 7,
       "assists": 0,
       "goalContributions": 7,
@@ -44,7 +44,7 @@
       "rank": 4,
       "player": "Harry Kane",
       "team": "Inglaterra",
-      "playedMatches": 5,
+      "playedMatches": 6,
       "goals": 6,
       "assists": 1,
       "goalContributions": 7,
@@ -84,7 +84,7 @@
       "rank": 8,
       "player": "Jude Bellingham",
       "team": "Inglaterra",
-      "playedMatches": 5,
+      "playedMatches": 6,
       "goals": 4,
       "assists": 1,
       "goalContributions": 5,
