@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T23:28:29.680257+00:00",
+  "generatedAt": "2026-07-12T00:01:56.910643+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -183,32 +183,18 @@
       "rank": 5
     },
     {
-      "team": "Noruega",
+      "team": "Inglaterra",
       "pj": 5,
       "pg": 4,
-      "pe": 0,
-      "pp": 1,
-      "gf": 12,
-      "gc": 9,
-      "dg": 3,
-      "win_pct": 80.0,
-      "avg_gf": 2.4,
-      "avg_gc": 1.8,
-      "rank": 6
-    },
-    {
-      "team": "Inglaterra",
-      "pj": 4,
-      "pg": 3,
       "pe": 1,
       "pp": 0,
-      "gf": 8,
+      "gf": 9,
       "gc": 3,
-      "dg": 5,
-      "win_pct": 75.0,
-      "avg_gf": 2.0,
-      "avg_gc": 0.75,
-      "rank": 7
+      "dg": 6,
+      "win_pct": 80.0,
+      "avg_gf": 1.8,
+      "avg_gc": 0.6,
+      "rank": 6
     },
     {
       "team": "Marruecos",
@@ -222,6 +208,20 @@
       "win_pct": 66.7,
       "avg_gf": 1.67,
       "avg_gc": 1.0,
+      "rank": 7
+    },
+    {
+      "team": "Noruega",
+      "pj": 6,
+      "pg": 4,
+      "pe": 0,
+      "pp": 2,
+      "gf": 12,
+      "gc": 10,
+      "dg": 2,
+      "win_pct": 66.7,
+      "avg_gf": 2.0,
+      "avg_gc": 1.67,
       "rank": 8
     },
     {
