@@ -407,6 +407,10 @@
     "k99": {
       "scoreH": 1,
       "scoreA": 2
+    },
+    "k100": {
+      "scoreH": 3,
+      "scoreA": 1
     }
   },
   "terceros": {
@@ -527,6 +531,10 @@
     "k99": {
       "home": "Noruega",
       "away": "Inglaterra"
+    },
+    "k100": {
+      "home": "Argentina",
+      "away": "Suiza"
     }
   }
 }
