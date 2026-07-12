@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T01:07:30.001933+00:00",
+  "generatedAt": "2026-07-12T04:40:24.792256+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -26,8 +26,8 @@
       "team": "Argentina",
       "playedMatches": 6,
       "goals": 8,
-      "assists": 1,
-      "goalContributions": 9,
+      "assists": 2,
+      "goalContributions": 10,
       "penalties": 0
     },
     {
@@ -128,16 +128,16 @@
     },
     {
       "team": "Argentina",
-      "pj": 5,
-      "pg": 5,
+      "pj": 6,
+      "pg": 6,
       "pe": 0,
       "pp": 0,
-      "gf": 14,
+      "gf": 16,
       "gc": 5,
-      "dg": 9,
+      "dg": 11,
       "win_pct": 100.0,
-      "avg_gf": 2.8,
-      "avg_gc": 1.0,
+      "avg_gf": 2.67,
+      "avg_gc": 0.83,
       "rank": 2
     },
     {
@@ -169,7 +169,7 @@
       "rank": 4
     },
     {
-      "team": "Suiza",
+      "team": "Inglaterra",
       "pj": 5,
       "pg": 4,
       "pe": 1,
@@ -183,20 +183,6 @@
       "rank": 5
     },
     {
-      "team": "Inglaterra",
-      "pj": 5,
-      "pg": 4,
-      "pe": 1,
-      "pp": 0,
-      "gf": 9,
-      "gc": 3,
-      "dg": 6,
-      "win_pct": 80.0,
-      "avg_gf": 1.8,
-      "avg_gc": 0.6,
-      "rank": 6
-    },
-    {
       "team": "Marruecos",
       "pj": 6,
       "pg": 4,
@@ -208,6 +194,20 @@
       "win_pct": 66.7,
       "avg_gf": 1.67,
       "avg_gc": 1.0,
+      "rank": 6
+    },
+    {
+      "team": "Suiza",
+      "pj": 6,
+      "pg": 4,
+      "pe": 1,
+      "pp": 1,
+      "gf": 9,
+      "gc": 5,
+      "dg": 4,
+      "win_pct": 66.7,
+      "avg_gf": 1.5,
+      "avg_gc": 0.83,
       "rank": 7
     },
     {
