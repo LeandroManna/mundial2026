@@ -222,14 +222,14 @@
         "stadium": "AT&T Stadium", "city": "Dallas",
         "homeSlot": { "type": "winner", "matchId": "k97" },
         "awaySlot": { "type": "winner", "matchId": "k98" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Flow", "Telefé", "TV Pública"]
       },
       {
         "id": "k102", "num": "P102", "date": "2026-07-15", "time": "16:00",
         "stadium": "Mercedes Benz Stadium", "city": "Atlanta",
         "homeSlot": { "type": "winner", "matchId": "k99" },
         "awaySlot": { "type": "winner", "matchId": "k100" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Flow", "TyC Sports", "Telefé", "TV Pública"]
       }
     ]
   },
@@ -242,7 +242,7 @@
         "stadium": "Hard Rock Stadium", "city": "Miami",
         "homeSlot": { "type": "loser", "matchId": "k101" },
         "awaySlot": { "type": "loser", "matchId": "k102" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Flow", "TV Pública"]
       }
     ]
   },
@@ -255,7 +255,7 @@
         "stadium": "MetLife Stadium", "city": "Nueva Jersey",
         "homeSlot": { "type": "winner", "matchId": "k101" },
         "awaySlot": { "type": "winner", "matchId": "k102" },
-        "tv": ["DSports"]
+        "tv": ["DSports", "Flow", "TV Pública"]
       }
     ]
   }
