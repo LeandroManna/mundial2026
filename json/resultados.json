@@ -411,6 +411,10 @@
     "k100": {
       "scoreH": 3,
       "scoreA": 1
+    },
+    "k101": {
+      "scoreH": 0,
+      "scoreA": 2
     }
   },
   "terceros": {
@@ -535,6 +539,10 @@
     "k100": {
       "home": "Argentina",
       "away": "Suiza"
+    },
+    "k101": {
+      "home": "Francia",
+      "away": "España"
     }
   }
 }
