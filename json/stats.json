@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T17:22:58.736658+00:00",
+  "generatedAt": "2026-07-14T18:39:39.612669+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -14,7 +14,7 @@
       "rank": 1,
       "player": "Kylian Mbappé",
       "team": "Francia",
-      "playedMatches": 6,
+      "playedMatches": 7,
       "goals": 8,
       "assists": 2,
       "goalContributions": 10,
@@ -64,7 +64,7 @@
       "rank": 6,
       "player": "Ousmane Dembélé",
       "team": "Francia",
-      "playedMatches": 6,
+      "playedMatches": 7,
       "goals": 5,
       "assists": 2,
       "goalContributions": 7,
@@ -94,7 +94,7 @@
       "rank": 9,
       "player": "Mikel Oyarzabal",
       "team": "España",
-      "playedMatches": 6,
+      "playedMatches": 7,
       "goals": 4,
       "assists": 1,
       "goalContributions": 5,
