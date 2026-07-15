@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T17:19:28.430106+00:00",
+  "generatedAt": "2026-07-15T18:38:22.832255+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -24,7 +24,7 @@
       "rank": 2,
       "player": "Lionel Messi",
       "team": "Argentina",
-      "playedMatches": 6,
+      "playedMatches": 7,
       "goals": 8,
       "assists": 2,
       "goalContributions": 10,
@@ -44,7 +44,7 @@
       "rank": 4,
       "player": "Harry Kane",
       "team": "Inglaterra",
-      "playedMatches": 6,
+      "playedMatches": 7,
       "goals": 6,
       "assists": 1,
       "goalContributions": 7,
@@ -54,7 +54,7 @@
       "rank": 5,
       "player": "Jude Bellingham",
       "team": "Inglaterra",
-      "playedMatches": 6,
+      "playedMatches": 7,
       "goals": 6,
       "assists": 1,
       "goalContributions": 7,
