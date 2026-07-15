@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T21:02:23.113779+00:00",
+  "generatedAt": "2026-07-15T22:13:18.824050+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -114,15 +114,15 @@
   "teamRanking": [
     {
       "team": "Argentina",
-      "pj": 6,
-      "pg": 6,
+      "pj": 7,
+      "pg": 7,
       "pe": 0,
       "pp": 0,
-      "gf": 17,
-      "gc": 6,
-      "dg": 11,
+      "gf": 19,
+      "gc": 7,
+      "dg": 12,
       "win_pct": 100.0,
-      "avg_gf": 2.83,
+      "avg_gf": 2.71,
       "avg_gc": 1.0,
       "rank": 1
     },
@@ -155,20 +155,6 @@
       "rank": 3
     },
     {
-      "team": "Inglaterra",
-      "pj": 6,
-      "pg": 5,
-      "pe": 1,
-      "pp": 0,
-      "gf": 13,
-      "gc": 6,
-      "dg": 7,
-      "win_pct": 83.3,
-      "avg_gf": 2.17,
-      "avg_gc": 1.0,
-      "rank": 4
-    },
-    {
       "team": "México",
       "pj": 5,
       "pg": 4,
@@ -180,6 +166,20 @@
       "win_pct": 80.0,
       "avg_gf": 2.0,
       "avg_gc": 0.6,
+      "rank": 4
+    },
+    {
+      "team": "Inglaterra",
+      "pj": 7,
+      "pg": 5,
+      "pe": 1,
+      "pp": 1,
+      "gf": 14,
+      "gc": 8,
+      "dg": 6,
+      "win_pct": 71.4,
+      "avg_gf": 2.0,
+      "avg_gc": 1.14,
       "rank": 5
     },
     {
