@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T21:28:03.611391+00:00",
+  "generatedAt": "2026-07-18T22:26:25.728925+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -15,9 +15,9 @@
       "player": "Kylian Mbappé",
       "team": "Francia",
       "playedMatches": 8,
-      "goals": 8,
-      "assists": 3,
-      "goalContributions": 11,
+      "goals": 9,
+      "assists": 4,
+      "goalContributions": 13,
       "penalties": 1
     },
     {
