@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T22:26:25.728925+00:00",
+  "generatedAt": "2026-07-18T23:28:54.203537+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -15,9 +15,9 @@
       "player": "Kylian Mbappé",
       "team": "Francia",
       "playedMatches": 8,
-      "goals": 9,
+      "goals": 10,
       "assists": 4,
-      "goalContributions": 13,
+      "goalContributions": 14,
       "penalties": 1
     },
     {
@@ -42,6 +42,16 @@
     },
     {
       "rank": 4,
+      "player": "Jude Bellingham",
+      "team": "Inglaterra",
+      "playedMatches": 8,
+      "goals": 7,
+      "assists": 1,
+      "goalContributions": 8,
+      "penalties": 0
+    },
+    {
+      "rank": 5,
       "player": "Harry Kane",
       "team": "Inglaterra",
       "playedMatches": 8,
@@ -51,17 +61,17 @@
       "penalties": 2
     },
     {
-      "rank": 5,
-      "player": "Jude Bellingham",
-      "team": "Inglaterra",
+      "rank": 6,
+      "player": "Ousmane Dembélé",
+      "team": "Francia",
       "playedMatches": 8,
       "goals": 6,
-      "assists": 1,
-      "goalContributions": 7,
+      "assists": 2,
+      "goalContributions": 8,
       "penalties": 0
     },
     {
-      "rank": 6,
+      "rank": 7,
       "player": "Mikel Oyarzabal",
       "team": "España",
       "playedMatches": 7,
@@ -69,16 +79,6 @@
       "assists": 1,
       "goalContributions": 6,
       "penalties": 1
-    },
-    {
-      "rank": 7,
-      "player": "Ousmane Dembélé",
-      "team": "Francia",
-      "playedMatches": 8,
-      "goals": 5,
-      "assists": 2,
-      "goalContributions": 7,
-      "penalties": 0
     },
     {
       "rank": 8,
@@ -127,20 +127,6 @@
       "rank": 1
     },
     {
-      "team": "Francia",
-      "pj": 7,
-      "pg": 6,
-      "pe": 0,
-      "pp": 1,
-      "gf": 16,
-      "gc": 4,
-      "dg": 12,
-      "win_pct": 85.7,
-      "avg_gf": 2.29,
-      "avg_gc": 0.57,
-      "rank": 2
-    },
-    {
       "team": "España",
       "pj": 7,
       "pg": 6,
@@ -152,7 +138,7 @@
       "win_pct": 85.7,
       "avg_gf": 1.86,
       "avg_gc": 0.14,
-      "rank": 3
+      "rank": 2
     },
     {
       "team": "México",
@@ -166,20 +152,34 @@
       "win_pct": 80.0,
       "avg_gf": 2.0,
       "avg_gc": 0.6,
+      "rank": 3
+    },
+    {
+      "team": "Francia",
+      "pj": 8,
+      "pg": 6,
+      "pe": 0,
+      "pp": 2,
+      "gf": 20,
+      "gc": 10,
+      "dg": 10,
+      "win_pct": 75.0,
+      "avg_gf": 2.5,
+      "avg_gc": 1.25,
       "rank": 4
     },
     {
       "team": "Inglaterra",
-      "pj": 7,
-      "pg": 5,
+      "pj": 8,
+      "pg": 6,
       "pe": 1,
       "pp": 1,
-      "gf": 14,
-      "gc": 8,
-      "dg": 6,
-      "win_pct": 71.4,
-      "avg_gf": 2.0,
-      "avg_gc": 1.14,
+      "gf": 20,
+      "gc": 12,
+      "dg": 8,
+      "win_pct": 75.0,
+      "avg_gf": 2.5,
+      "avg_gc": 1.5,
       "rank": 5
     },
     {
