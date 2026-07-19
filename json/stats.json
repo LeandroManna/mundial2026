@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T17:16:23.539421+00:00",
+  "generatedAt": "2026-07-19T18:27:52.025350+00:00",
   "source": "football-data.org",
   "competition": {
     "name": "FIFA World Cup",
@@ -24,7 +24,7 @@
       "rank": 2,
       "player": "Lionel Messi",
       "team": "Argentina",
-      "playedMatches": 7,
+      "playedMatches": 8,
       "goals": 8,
       "assists": 4,
       "goalContributions": 12,
@@ -74,7 +74,7 @@
       "rank": 7,
       "player": "Mikel Oyarzabal",
       "team": "España",
-      "playedMatches": 7,
+      "playedMatches": 8,
       "goals": 5,
       "assists": 1,
       "goalContributions": 6,
